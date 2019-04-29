@@ -40,3 +40,33 @@ class Role(db.Model):
 
     def __repr__(self):
         return f'Users {self.name}'
+
+
+'''
+model for Questions
+'''
+
+class Question(db.Model):
+    __tablename__='questions'
+    id=id=db.Column(db.Integer,primary_key=True)
+    question=db.Column(db.String())
+    category=db.Column(db.String())
+
+
+'''
+model for solutions
+'''
+
+class Answers(db.Model):
+    id=id=db.Column(db.Integer,primary_key=True)
+    solution=db.Column(db.String())
+
+
+
+'''
+models for comments
+'''
+
+class Comments(db.Model):
+    id=id=db.Column(db.Integer,primary_key=True)
+    comment=db.Column(db.String())
