@@ -23,8 +23,9 @@ body{
 .side-bar{
   background-color: black;
   height: 100%;
+
 }
-#moringa{
+#moringa, #quest{
   width:100%;
 }
 #account{
@@ -37,4 +38,7 @@ body{
   display: inline-block;
   vertical-align: middle;
   margin-left: 37%;
+}
+#quest{
+  height: 90px;
 }
