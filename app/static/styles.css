@@ -10,3 +10,31 @@ body{
   font-family: 'Amatic SC', cursive;
   font-size: xx-large;
 }
+
+.navbar{
+  padding: 2.5%;
+  background-color: #637c33;
+  color: black;
+}
+.black{
+  color: black;
+}
+
+.side-bar{
+  background-color: black;
+  height: 100%;
+}
+#moringa{
+  width:100%;
+}
+#account{
+  overflow: hidden;
+  border-radius: 100%;
+  border: 2px solid #637c33 ;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 37%;
+}
