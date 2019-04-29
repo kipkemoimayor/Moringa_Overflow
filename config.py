@@ -1,5 +1,5 @@
 class Config:
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
 
 class DevConfig(Config):
     DEBUG= True
