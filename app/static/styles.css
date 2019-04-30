@@ -2,27 +2,35 @@
   color:yellow;
 }
 body{
-  font-family: 'Crimson Text', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: x-large;
+  background-image: url('https://images.pexels.com/photos/172294/pexels-photo-172294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:  #29153E;
+
 }
 
 #logo{
   font-family: 'Amatic SC', cursive;
   font-size: xx-large;
+  color: #a36598;
+  font-weight: bold;
 }
 
 .navbar{
-  padding: 2.5%;
-  background-color: #637c33;
-  color: black;
+  padding: 2%;
+  background-color: #29153E;
+  width: 100%;
 }
-.black{
-  color: black;
+.bisc{
+
 }
 
 .side-bar{
-  background-color: black;
-  height: 100%;
+  background-color: #ffe4c4;
+  height: 600px;
+
 
 }
 #moringa, #quest{
@@ -46,8 +54,56 @@ body{
   height: 100%;
   width: 100%;
 }
-img{
-  height: auto;
-  max-height: 100%;
-  display: block;
+
+.zoom{
+  border:#a36598;
+}
+.zoom:hover{
+  box-shadow: 5px 5px grey;
+  background-color: #637c33;
+  padding: 0;
+  border-radius: 2%;
+  transition-duration: 0.5s;
+  border: #ffe4c4;
+}
+
+.content-section{
+  margin-top: 16%;
+}
+
+.category{
+  font-family: 'Arvo', cursive;
+  text-transform: uppercase;
+  color: #29153E;
+  padding-top: 2%;
+  background-color:rgba(0,0,0,0.2);
+  font-size: xx-large;
+}
+.side-bar, .top{
+  position: sticky;
+  z-index: 99;
+
+}
+.sidelinks{
+  text-decoration: none;
+  color: #a36598;
+}
+.sidelinks:hover{
+  text-decoration: none;
+}
+
+.categories{
+  overflow: scroll;
+  scroll-behavior: smooth;
+  height:600px;
+  overflow-x: hidden;
+}
+.content-section{
+  border: 2px solid #29153E;
+}
+.card-header{
+  background-color:  #ffe4c4;
+}
+#login, #home, #register{
+  color:  #ffe4c4;
 }
