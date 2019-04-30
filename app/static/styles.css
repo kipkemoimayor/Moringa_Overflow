@@ -2,17 +2,17 @@
   color:yellow;
 }
 body{
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Arvo', cursive;
   font-size: x-large;
-  background-image: url('https://images.pexels.com/photos/172294/pexels-photo-172294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+  /* background-image: url('https://images.pexels.com/photos/172294/pexels-photo-172294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   color:  #29153E;
 
 }
 
 #logo{
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Arvo', cursive;
   font-size: xx-large;
   color: #a36598;
   font-weight: bold;
@@ -20,7 +20,7 @@ body{
 
 .navbar{
   padding: 2%;
-  background-color: #29153E;
+  background-color: rgba(41, 21, 62,0.8);
   width: 100%;
 }
 .bisc{
