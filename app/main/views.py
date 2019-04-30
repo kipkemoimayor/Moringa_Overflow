@@ -26,3 +26,10 @@ def ask_a_question():
         return redirect("main.index")
 
     return render_template("question.html",title=title)
+
+@main.route("/new/comment",methods=["GET","POST"])
+def comment():
+
+    comment_form = CommentsForm()
+
+    return render_template("new_comment.html", comment_form = comment_form)

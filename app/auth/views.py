@@ -10,7 +10,7 @@ login users
 '''
 @auth.route("/login")
 def login():
-    loginForm='form'
+    loginForm=LoginForm()
     if loginForm.validate_on_submit():
         user = Users.query.filter_by(email = login_form.email.data).first()
         if user is not None and user.verify_password(login_form.password.data):
@@ -25,7 +25,7 @@ def login():
 #registration
 @auth.route("/register")
 def register():
-    form="form name"
+    form=RegistrationForm()
     if form.validate_on_submit():
         roles="Users";
         user=Users(email=form.email.data,username=form.username.data,password=form.password.data,role_id=roles)

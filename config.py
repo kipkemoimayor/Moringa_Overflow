@@ -1,5 +1,13 @@
+import os
+
 class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
+    
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+    # simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
 
 class DevConfig(Config):
     DEBUG= True
