@@ -2,8 +2,8 @@ from . import main
 from flask import render_template,redirect,url_for
 from flask_login import login_required,current_user
 from .. import db
-from ..models import Users,Question,Comments
-from .forms import CommentsForm,PostQuestion
+from ..models import Users,Question,Comments,Answers
+from .forms import CommentsForm,PostQuestion,AnswersForm
 
 
 
@@ -41,6 +41,7 @@ def comment():
 
     return render_template("new_comment.html", comment_form = comment_form)
 
+
 @main.route("/ask",methods=['POST','GET'])
 def ask_quiz():
     title="Ask a Quiz"
@@ -51,3 +52,13 @@ def ask_quiz():
         db.session.commit()
         return redirect(url_for('main.ask_quiz'))
     return render_template("post.html",title=title,form=form)
+
+@main.route("question/answer_a_question/",methods=["GET","POST"])
+def answer_a_question():
+
+    answer_form = AnswersForm()
+    if answer_form.validate_on_submit():
+        answer = Answers(answer=form.solution.data,question_id = questions.id, user_id = users.id)
+        return redirect (url_for('main.answer_a_question'))
+
+    return render_template("answers.html")
