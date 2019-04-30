@@ -1,6 +1,6 @@
 from flask import render_template,redirect,url_for,flash,request
 from . import auth
-from ..models import User
+from ..models import Users
 from .forms import RegistrationForm,LoginForm,ResetPassword,NewPassword
 from .. import db
 from ..email import send_email, send_reset_email
