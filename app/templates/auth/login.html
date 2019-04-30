@@ -2,7 +2,11 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="container">
+=======
+<div class="container subscribe"> 
+>>>>>>> origin/feature/authentication
     <div class="row">
       <div class= "col-md-2"> </div>
       <div class="col-md-8">
@@ -14,11 +18,22 @@
         </div>
       {% endfor %}
       <!-- Login form -->
+<<<<<<< HEAD
       {{wtf.quick_form(login_form)}}
       <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+=======
+      <h4 class="login">Enter Your Credentials to Login</h4>
+      {{wtf.quick_form(login_form)}}
+      <p> Don't have an account? <a href="{{url_for('auth.register')}}">Register here</a></p>
+      <p>Forgot Password? <a href="{{url_for('auth.reset_password')}}">Reset Password</a></p>
+>>>>>>> origin/feature/authentication
      </div>
      <div clas="col-md-2"> </div>
     </div>
 </div>
 
+<<<<<<< HEAD
 {% endblock%}
+=======
+{% endblock%}
+>>>>>>> origin/feature/authentication

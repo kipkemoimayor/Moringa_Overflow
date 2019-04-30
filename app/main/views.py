@@ -1,10 +1,16 @@
 from . import main
+<<<<<<< HEAD
 from flask import render_template,redirect,url_for
 from flask_login import login_required
 from .. import db
 from ..models import Users,Question
 from .forms import CommentsForm
 
+=======
+from flask import render_template
+from .. import db
+from flask_login import login_required,current_user
+>>>>>>> origin/feature/authentication
 
 @main.route("/")
 def index():
