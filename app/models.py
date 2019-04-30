@@ -23,6 +23,8 @@ class Users(UserMixin,db.Model):
     email=db.Column(db.String(255),unique=True,index=True)
     pass_secure=db.Column(db.String(255))
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
+    questions=db.relationship('Question',backref='user',lazy='dynamic')
+
 
     @property
     def password(self):
@@ -77,6 +79,7 @@ class Question(db.Model):
     id=id=db.Column(db.Integer,primary_key=True)
     question=db.Column(db.String())
     category=db.Column(db.String())
+    user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
 
 
 '''
