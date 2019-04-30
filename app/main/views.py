@@ -53,7 +53,7 @@ def ask_quiz():
         return redirect(url_for('main.ask_quiz'))
     return render_template("post.html",title=title,form=form)
 
-@main.route("question/answer_a_question/",methods=["GET","POST"])
+@main.route("/question/answer_a_question/",methods=["GET","POST"])
 def answer_a_question():
 
     answer_form = AnswersForm()
