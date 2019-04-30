@@ -6,4 +6,6 @@ class CommentsForm(FlaskForm):
     comment = TextAreaField('Comment')
     submit = SubmitField('Submit')
 
-class 
+class AnswersForm(FlaskForm):
+    solution = TextAreaField('Answer the Question')
+    submit = SubmitField('Submit Answer')
