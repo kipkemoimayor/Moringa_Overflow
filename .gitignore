@@ -1,5 +1,4 @@
-virtual/
-*.pyc
-instance/
+*.sh
+__pycache__/
 .vscode/
-start.sh
+virtual/

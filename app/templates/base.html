@@ -1,5 +1,9 @@
 {%extends "bootstrap/base.html"%}
-}
+{% block navbar %}
+    {% include 'navbar.html' %}
+
+    
+{% endblock %}
 {%block content%}
 {%block styles%}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
@@ -8,12 +12,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="icon" href="/static/img/ic.png">
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
-<script src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
-<script src="{{ url_for('static', filename='js/mdb.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/mdb.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="{{ url_for('static', filename='js/main.js')}}"></script>
 
   <!--Importing the simple mde css and js files  -->
   {{ simplemde.css}}
