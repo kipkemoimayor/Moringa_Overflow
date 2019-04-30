@@ -42,3 +42,12 @@ body{
 #quest{
   height: 90px;
 }
+#django{
+  height: 100%;
+  width: 100%;
+}
+img{
+  height: auto;
+  max-height: 100%;
+  display: block;
+}
