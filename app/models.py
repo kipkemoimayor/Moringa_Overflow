@@ -84,8 +84,11 @@ model for solutions
 '''
 
 class Answers(db.Model):
+    __tablename__='answers'
     id=id=db.Column(db.Integer,primary_key=True)
     solution=db.Column(db.String())
+    question_id=db.Column(db.Integer,db.ForeignKey('questions.id'))
+    user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
 
 
 
