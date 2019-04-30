@@ -37,7 +37,7 @@ class Users(UserMixin,db.Model):
 
 
     def get_reset_password_token(self, expires_in=600):
-        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, os.environ.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
+        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, "collo", algorithm='HS256').decode('utf-8')
 
     def set_password(self,password):
         self.hash_pass = generate_password_hash(password)
@@ -100,7 +100,7 @@ class Comments(db.Model):
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return Users.query.get(int(user_id))
 
 # class User(UserMixin,db.Model):
 #     __tablename__ = 'users'
