@@ -3,6 +3,7 @@ from flask import render_template,redirect,url_for,flash,request
 from flask_login import login_required,login_user,login_user
 from .. import db
 from ..models import Users
+from .forms import RegistrationForm,LoginForm
 
 
 '''
@@ -20,7 +21,7 @@ def login():
         flash('Invalid username or Password')
 
     title = "Moringa flow login"
-    return render_template('auth/login.html',login_form = login_form,title=title)
+    return render_template('auth/login.html',login_form = loginForm,title=title)
 
 #registration
 @auth.route("/register")
@@ -34,7 +35,7 @@ def register():
 
         return redirect(url_for("auth.login"))
 
-    return render_template("auth/register",form=form)
+    return render_template("auth/register.html",registration_form=form)
 
 
 @auth.route("/logout")
