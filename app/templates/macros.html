@@ -1,0 +1,29 @@
+{% macro displayQuestions(questions) %}
+
+<div class="scroll">
+    {% for question in questions %}
+    <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"> Answers </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Like </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Dislike</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+            <!-- question.title -->
+          <h5 class="card-title">Python Deployment Error</h5>
+          <!-- question.body -->
+          <p class="card-text">I keep getting an error that my app folder cannot be located yet i have imported it correctly</p>
+          <a href="#" class="btn btn-info">Offer Solution</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}
