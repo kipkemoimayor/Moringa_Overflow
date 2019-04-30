@@ -24,6 +24,7 @@ class Users(UserMixin,db.Model):
     pass_secure=db.Column(db.String(255))
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
+    answers=db.relationship('Answers',backref='owner',lazy='dynamic')
 
 
     @property
@@ -80,6 +81,8 @@ class Question(db.Model):
     question=db.Column(db.String())
     category=db.Column(db.String())
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
+    answers=db.relationship('Answers',backref='quiz',lazy='dynamic')
+
 
 
 '''
@@ -87,8 +90,13 @@ model for solutions
 '''
 
 class Answers(db.Model):
+    __tablename__='answers'
     id=id=db.Column(db.Integer,primary_key=True)
     solution=db.Column(db.String())
+    question_id=db.Column(db.Integer,db.ForeignKey('questions.id'))
+    user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
+    comments=db.relationship('Comments',backref='commen',lazy='dynamic')
+
 
 
 
@@ -97,13 +105,15 @@ models for comments
 '''
 
 class Comments(db.Model):
+    __tablename__='comments'
     id=id=db.Column(db.Integer,primary_key=True)
     comment=db.Column(db.String())
+    answer_id=db.Column(db.Integer,db.ForeignKey('answers.id'))
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return Users.query.get(int(user_id))
+
+
+
 
 # class User(UserMixin,db.Model):
 #     __tablename__ = 'users'

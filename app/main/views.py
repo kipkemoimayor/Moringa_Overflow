@@ -2,7 +2,7 @@ from . import main
 from flask import render_template,redirect,url_for
 from flask_login import login_required,current_user
 from .. import db
-from ..models import Users,Question
+from ..models import Users,Question,Comments
 from .forms import CommentsForm,PostQuestion
 
 
@@ -33,6 +33,11 @@ def ask_a_question():
 def comment():
 
     comment_form = CommentsForm()
+    if comment_form.validate_on_submit():
+        comment=Comments(comment=comment_form.comment.data)
+        db.session.add(comment)
+        db.session.commit()
+
 
     return render_template("new_comment.html", comment_form = comment_form)
 
