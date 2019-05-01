@@ -81,7 +81,7 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    return render_template('index.html', user = user, title=title)
+    return render_template('/profile/profile.html', user = user, title=title)
 
 
 '''
