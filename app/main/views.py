@@ -83,3 +83,19 @@ def profile(uname, id_user):
         abort(404)
 
     return render_template('index.html', user = user, title=title)
+
+
+'''
+category view
+'''
+
+@main.route("/feeds/category/<categ>")
+def categories(categ):
+    categ=categ
+    #categories
+    flask=Question.query.filter_by(category='flask').all()
+    python=Question.query.filter_by(category='py').all()
+
+
+    title="categories"
+    return render_template("categories.html",flask=flask,python=python,categ=categ)

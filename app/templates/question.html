@@ -9,13 +9,13 @@
     <h1>Categories</h1>
 
     <ul class="list-group">
-      <a href="#"><li class="list-group-item">Flask</li></a>
-      <a href="#"><li class="list-group-item">Django</li></a>
-      <a href="#"><li class="list-group-item">Javascript</li></a>
-      <a href="#"><li class="list-group-item">Postgresql</li></a>
-      <a href="#"><li class="list-group-item">jQuery</li></a>
-      <a href="#"><li class="list-group-item">Boostrap4</li></a>
-      <a href="#"><li class="list-group-item">Html5</li></a>
+      <a href="{{url_for('main.categories',categ='flask')}}"><li class="list-group-item">Flask</li></a>
+      <a href="{{url_for('main.categories',categ='Django')}}"><li class="list-group-item">Django</li></a>
+      <a href="{{url_for('main.categories',categ='Javascript')}}"><li class="list-group-item">Javascript</li></a>
+      <a href="{{url_for('main.categories',categ='Postgresql')}}"><li class="list-group-item">Postgresql</li></a>
+      <a href="{{url_for('main.categories',categ='jQuery')}}"><li class="list-group-item">jQuery</li></a>
+      <a href="{{url_for('main.categories',categ='Python')}}"><li class="list-group-item">Python3.6</li></a>
+      <a href="{{url_for('main.categories',categ='Html5')}}"><li class="list-group-item">Html5</li></a>
     </ul>
 
   </div>
