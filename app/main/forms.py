@@ -17,7 +17,7 @@ class AnswersForm(FlaskForm):
     submit = SubmitField('Submit Answer')
 
 class QuestionForm(FlaskForm):
-    question_title = StringField('Question title',validators=[Required()])
-    category=SelectField("Choose category",choices=[("py","Python"),("js","JavaScript")])
+    title = StringField('Question title',validators=[Required()])
+    category=SelectField("Choose category",choices=[("py","Python"),("js","JavaScript"),('flask','Flask'),("jquery","jQuery"),("java","Java"),('angular','Angular')])
     question = TextAreaField('Post your question')
     submit = SubmitField('Submit')

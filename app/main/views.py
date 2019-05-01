@@ -14,19 +14,19 @@ def index():
     return render_template("index.html",title=title)
 
 
-@main.route("/questions/ask_a_question/")
+@main.route("/questions/ask_a_question/",methods=['POST','GET'])
 @login_required
 def ask_a_question():
-    # title=f"ask a question {current_user.user}"
-    #saving to the database
+    title=f"ask a question {current_user.username}"
+    # saving to the database
 
     question_form = QuestionForm()
-    # if question_form.validate_on_submit():
-    #     question=Question(question=question_form.data.question,category=question_form.data.category)
-    #     db.session.add(question)
-    #     db.session.commit()
+    if question_form.validate_on_submit():
+        question=Question(question=question_form.question.data,category=question_form.category.data,title=question_form.title.data,user_id=current_user.id)
+        db.session.add(question)
+        db.session.commit()
 
-        # return redirect("main.index", question_form = question_form)
+        return redirect(url_for('main.feeds'))
 
     return render_template("new_question.html", question_form = question_form)
 
@@ -44,16 +44,16 @@ def comment():
 
 
 
-@main.route("/ask",methods=['POST','GET'])
-def ask_quiz():
-    title="Ask a Quiz"
-    form=PostQuestion()
-    if form.validate_on_submit():
-        quiz=Question(question=form.question.data,category=form.category.data)
-        db.session.add(quiz)
-        db.session.commit()
-        return redirect(url_for('main.ask_quiz'))
-    return render_template("post.html",title=title,form=form)
+# @main.route("/ask",methods=['POST','GET'])
+# def ask_quiz():
+#     title="Ask a Quiz"
+#     form=PostQuestion()
+#     if form.validate_on_submit():
+#         quiz=Question(question=form.question.data,category=form.category.data)
+#         db.session.add(quiz)
+#         db.session.commit()
+#         return redirect(url_for('main.ask_quiz'))
+#     return render_template("post.html",title=title,form=form)
 
 @main.route("/question/answer_a_question/",methods=["GET","POST"])
 def answer_a_question():

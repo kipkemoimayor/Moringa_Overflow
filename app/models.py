@@ -85,6 +85,7 @@ model for Questions
 class Question(db.Model):
     __tablename__='questions'
     id=id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String())
     question=db.Column(db.String())
     category=db.Column(db.String())
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
