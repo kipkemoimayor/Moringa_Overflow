@@ -31,9 +31,11 @@
       </div>
 
 
-
+      {% if user.profile_pic_path %}
       <div id="yespro" style="background-image:url({{url_for('static',filename=user.profile_pic_path)}})" class="card-body">
-
+        {%else%}
+        <div id="yespro" style="" class="card-body">
+          {%endif%}
         <div class="picpro">
           <div class="avatar mx-auto white">
             {% if user.profile_pic_path %}
@@ -59,22 +61,42 @@
 
       <h1 style="text-align:center">My Questions</h1>
       <div class="row">
-          {%if pitch%}
-          {%for project in pitch%}
+        <div class="col-md-12">
+
+          <div class="no">
+
+          </div>
+          <!-- Card -->
+<div class="card card-cascade wider reverse">
+
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title">Hello {{current_user.username}} <strong>Post ask a question or help others</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2"><a href="{{url_for('main.feeds')}}"><button class="btn default-color" type="button" name="button">Get started Here</button></a></h6>
+
+  </div>
+
+</div>
+<!-- Card -->
+
+        </div>
+
+          {%for quzi in personal_quiz%}
 
         <div class="col-md-6">
 
           <div class="one">
             <div class="on">
               <div  class="jumbotron title">
-                <h5>{{project.title}}</h5>
+                <h5>{{quzi.title}}</h5>
+                <i class="vom">Cetegory {{quzi.category}}</i>
+                <a  href="{{url_for('main.answer_a_question',id=quzi.id)}}">See answers</a>
               </div>
-              {{project.pitch}}
-              <br>
-              <i class="vom">Cetegory {{project.categ}}</i>
-              <br>
-              <hr class="default-color">
-              <a class="btn default-color" href="/pitch/new/review/{{project.id}}">comment</a>
+
             </div>
 
           </div>
@@ -83,42 +105,9 @@
         </div>
 
           {%endfor%}
-          {%else%}
-          <div class="col-md-12">
-
-            <div class="no">
-
-            </div>
-            <!-- Card -->
-  <div class="card card-cascade wider reverse">
-
-
-    <!-- Card content -->
-    <div class="card-body card-body-cascade text-center">
-
-      <!-- Title -->
-      <h4 class="card-title">Hello {{current_user.username}} <strong>Post ask a question or help others</strong></h4>
-      <!-- Subtitle -->
-      <h6 class="font-weight-bold indigo-text py-2"><a href="{{url_for('main.feeds')}}"><button class="btn default-color" type="button" name="button">Get started Here</button></a></h6>
-
-    </div>
-
-  </div>
-  <!-- Card -->
-
-          </div>
-
-          {%endif%}
-
-
-
       </div>
 
         </div>
-
-
-
-
 
   </div>
   </div>

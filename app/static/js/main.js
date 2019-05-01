@@ -50,11 +50,12 @@ $(document).ready(function () {
     $("#change").hide()
   })
   $("#yespro").mouseleave(function(){
-    $("#change").fadeOut(1000)
-    $(".pro").fadeOut(2000)
     $("#change").hide()
-    $(".pro").hide()
 
+
+  })
+  $("#update").click(function(){
+    $("#change").hide()
   })
 
 

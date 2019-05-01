@@ -72,6 +72,11 @@ def feeds():
 
 @main.route('/user/<uname>')
 def profile(uname):
+
+    '''
+    query questions for each user
+    '''
+    personal_quiz=Question.query.filter_by(user_id=current_user.id).all()
     user = Users.query.filter_by(username = uname).first()
 
     title = f"{uname.capitalize()}'s Profile"
@@ -81,7 +86,7 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    return render_template('/profile/profile.html', user = user, title=title)
+    return render_template('/profile/profile.html', user = user,personal_quiz=personal_quiz, title=title)
 
 
 '''
