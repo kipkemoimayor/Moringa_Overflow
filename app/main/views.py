@@ -69,5 +69,9 @@ def answer_a_question():
 @main.route("/feeds/questions",methods=['GET','POST'])
 def feeds():
 
+    all_feeds=Question.query.all()
+    all_feeds.reverse()
+
+
     title="Feeds"
-    return render_template("question.html",title=title)
+    return render_template("question.html",title=title,all_feeds=all_feeds)

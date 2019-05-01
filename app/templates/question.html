@@ -19,14 +19,21 @@
         <a href=""><button  class="btn btn-outline-success" type="button" name="button">Answer</button></a>
 
       </div>
+        </div>
+        
+
       <!-- query database for quiz-->
-      <div class="">
-
+      {%for feed in all_feeds%}
+      <div class="card-body us">
+          <h3>{{feed.title}}</h3>
+          <p>{{feed.question | truncate(200)}}</p>
+          <a href="#">See anwers</a>
       </div>
+      {%endfor%}
 
 
 
-    </div>
+
   </div>
   <div class="col-md-4">
     <h1 style='text-align:center'>Top questions</h1>
