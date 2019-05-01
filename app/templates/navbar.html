@@ -35,7 +35,7 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">{{current_user.username}} <i class="far fa-user-circle"></i></a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
             <!-- <a class="dropdown-item" href="#">S</a> -->
             <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a>
           </div>

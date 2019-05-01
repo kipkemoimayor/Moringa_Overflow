@@ -21,6 +21,7 @@ class Users(UserMixin,db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(255),index=True)
     email=db.Column(db.String(255),unique=True,index=True)
+    profile_pic_path = db.Column(db.String())
     pass_secure=db.Column(db.String(255))
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
@@ -29,7 +30,7 @@ class Users(UserMixin,db.Model):
 
     @property
     def password(self):
-        raise AttributeError("You cannot red the password attribute")
+        raise AttributeError("You cannot read the password attribute")
 
     @password.setter
     def password(self,password):

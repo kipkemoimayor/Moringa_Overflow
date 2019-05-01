@@ -21,3 +21,4 @@ class QuestionForm(FlaskForm):
     category=SelectField("Choose category",choices=[("py","Python"),("js","JavaScript"),('flask','Flask'),("jquery","jQuery"),("java","Java"),('angular','Angular'),('django','Django'),('html','Html5'),('post','Postgresql')])
     question = TextAreaField('Post your question')
     submit = SubmitField('Submit')
+
