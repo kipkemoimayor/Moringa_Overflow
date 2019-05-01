@@ -63,3 +63,10 @@ def answer_a_question():
         return redirect (url_for('main.answer_a_question'))
 
     return render_template("answers.html")
+
+
+@main.route("/feeds/questions",methods=['GET','POST'])
+def feeds():
+
+    title="Feeds"
+    return render_template("question.html",title=title)

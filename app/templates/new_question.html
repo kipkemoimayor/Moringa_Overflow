@@ -6,17 +6,20 @@
 {% block content %}
 
     <div class="container-fluid">
-            <h2 >Python</h2>
+            <h2 style="text-align:center" >Post your question here</h2>
             <hr>
         <div class="row">
+          <div class="col-md-2">
+
+          </div>
             <div class="col-md-7">
                 {{ wtf.quick_form(question_form) }}
                 {{simplemde.load}}
-                 
+
             </div>
-            
+
             <div class="col-md-5">
-                {{macro.displayQuestions(ask_a_question)}}
+
             </div>
         </div>
     </div>

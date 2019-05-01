@@ -18,12 +18,12 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Ask
+          <a class="nav-link" href="{{url_for('main.ask_a_question')}}">Ask
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="{{url_for('main.feeds')}}">Feeds</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
