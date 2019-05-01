@@ -86,6 +86,14 @@
   color:white;
 
 }
+#change{
+  display: none;
+}
 .pro{
   float: right;
+  display: none
+}
+.yespro:hover{
+
+
 }

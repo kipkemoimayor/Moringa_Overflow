@@ -8,7 +8,7 @@
   <div class="row">
 
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h1>Categories</h1>
 
     <ul class="list-group">
@@ -24,7 +24,7 @@
     </ul>
 
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <div class="card">
       <div class="card-header">
         <h4>{{user.username}} Profile</h4>
@@ -32,7 +32,7 @@
 
 
 
-      <div style="background-image:url({{url_for('static',filename=user.profile_pic_path)}})" class="card-body">
+      <div id="yespro" style="background-image:url({{url_for('static',filename=user.profile_pic_path)}})" class="card-body">
 
         <div class="picpro">
           <div class="avatar mx-auto white">
@@ -49,10 +49,11 @@
         <div class="pro  animated fadeIn">
           <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
             <input class="form-control" type="file" name="photo" value="" required>
-            <input  id="update" class="btn btn-info" type="submit" name="" value="Save">
+            <input  id="update" class="btn btn btn-outline-success" type="submit" name="" value="Save">
           </form>
 
         </div>
+        <button id="change" class="btn btn-outline-success" type="button" name="button">Change Profile</button>
 
       </div>
 

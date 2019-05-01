@@ -17,8 +17,6 @@ $(document).ready(function () {
     showConfirmButton:false
   })
 })
-  $(".profile").hide()
-  $("#change").show()
   /*business logig*/
 
   $("#dele").click(function(){
@@ -41,6 +39,21 @@ $(document).ready(function () {
 
     $(".com").slideDown(2000)
       $(".com").show()
+
+  })
+
+  $("#yespro").mouseover(function(){
+    $("#change").show()
+  })
+  $("#change").click(function(){
+    $(".pro").show()
+    $("#change").hide()
+  })
+  $("#yespro").mouseleave(function(){
+    $("#change").fadeOut(1000)
+    $(".pro").fadeOut(2000)
+    $("#change").hide()
+    $(".pro").hide()
 
   })
 
