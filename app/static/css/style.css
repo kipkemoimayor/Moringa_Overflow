@@ -1,64 +1,63 @@
-#fixed{
-    border: 1px solid #894;
-    text-align: center;
+.image{
+  position: relative;
 
-}
-#delete{
-  background-color:  red !important;
-}
-img{
-  max-width: 100%;
-  display:block;
-  height: 400px;
-}
-#bac{
-  background-image: url(../img/top.jpg);
+  background-image: url(../img/bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  height: 60vh;
+}
+.overlay{
+  background-color: rgba(0,0,0,0.8);
+  width: 50%;
+  height: 60vh;
+}
+#serial{
   text-align: center;
   color: white;
-  font-weight: 400;
-  background-color: rgba(0,0,1,0.9) !important;
+}
+#nav{
+  background-color:darkgreen;
+}
+#happy{
   position: relative;
-  top:-5px;
+
+  background-image: url(../img/bg2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
-#h1{
-  text-decoration: underline;
+
+.tops{
+  border: 1px solid green;
+  padding: 20px;
+  border-radius: 90px;
 }
-pre{
-  background-color: #6478;
+
+@media screen and (min-width:800px) {
+  .size{
+    position: relative;
+    top: 20px;
+    left: 120px;
+  }
+
 }
-.bts:hover{
-  color:black;
+.a:hover{
+    background-color: rgba(0,128,0,0.2) !important;
+    color:white !important;
 }
-.comments{
-  margin: 15px;
-}
-#tutor{
-  text-transform: capitalize;
-  color: #395D8C;
+#home{
+
+  background-color: #999E6D;
   text-align: center;
-}
-.del{
-  display: none;
-}
-.profiles{
-  display: none;
-}
-.com{
-  display: none;
-}
-#login{
-  max-width: 100%;
-  display:block;
-  height: 200px;
-}
-#jumbo h1{
+
   color: white;
 }
-#loginn{
-  
+.desc{
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  margin: auto;
 }
