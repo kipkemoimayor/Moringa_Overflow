@@ -75,3 +75,18 @@ def feeds():
 
     title="Feeds"
     return render_template("question.html",title=title,all_feeds=all_feeds)
+    return render_template("question.html",title=title)
+
+@main.route('/user/<uname>&<id_user>')
+@login_required
+def profile(uname, id_user):
+    user = Users.query.filter_by(username = uname).first()
+
+    title = f"{uname.capitalize()}'s Profile"
+
+
+
+    if user is None:
+        abort(404)
+
+    return render_template('index.html', user = user, title=title)

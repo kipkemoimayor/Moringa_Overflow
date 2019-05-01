@@ -34,23 +34,25 @@ class Users(UserMixin,db.Model):
     @password.setter
     def password(self,password):
         self.pass_secure =generate_password_hash(password)
+    
+    def set_password(self,password):
+        self.pass_secure = generate_password_hash(password)
 
     def verify_password(self,password):
         return check_password_hash(self.pass_secure,password)
 
 
     def get_reset_password_token(self, expires_in=600):
-        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, "collo", algorithm='HS256').decode('utf-8')
+        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, os.environ.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
 
-    def set_password(self,password):
-        self.hash_pass = generate_password_hash(password)
+    
     @staticmethod
     def verify_reset_password(token):
         try:
             id = jwt.decode(token, os.environ.get('SECRET_KEY'),algorithms=['HS256'])['reset_password']
         except:
             return
-        return User.query.get(id)
+        return Users.query.get(id)
 
 
     def __repr__(self):
