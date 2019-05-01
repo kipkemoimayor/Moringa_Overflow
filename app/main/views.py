@@ -1,7 +1,7 @@
 from . import main
-from flask import render_template,redirect,url_for,abort,flash
+from flask import render_template,redirect,url_for,abort,flash,request
 from flask_login import login_required,current_user
-from .. import db
+from .. import db,photos
 from ..models import Users,Question,Comments,Answers
 from .forms import CommentsForm,PostQuestion,AnswersForm,QuestionForm
 
@@ -85,4 +85,13 @@ def profile(uname, id_user):
     
     return render_template('index.html', user = user, title=title)
 
-
+@main.route('/user/<uname>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(uname):
+    user = Users.query.filter_by(username = uname).first()
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',uname=uname))

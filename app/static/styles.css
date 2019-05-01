@@ -107,3 +107,6 @@ body{
 #login, #home, #register{
   color:  #ffe4c4;
 }
+.profile_pic img{
+  border-radius: 40px;
+}
