@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template,redirect,url_for
+from flask import render_template,redirect,url_for,abort,flash
 from flask_login import login_required,current_user
 from .. import db
 from ..models import Users,Question,Comments,Answers
@@ -84,3 +84,5 @@ def profile(uname, id_user):
         abort(404)
     
     return render_template('index.html', user = user, title=title)
+
+

@@ -1,9 +1,12 @@
 import os
 
 class Config:
+
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://antavio:simple@localhost/group_overflow'
 
     SECRET_KEY = "qwerty"
+
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
