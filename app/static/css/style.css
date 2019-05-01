@@ -61,3 +61,8 @@
   font-weight: 400;
   margin: auto;
 }
+.card_body{
+  background-image:url('../img/over.jpg');
+  background-size:cover;
+  background-position:center;
+}

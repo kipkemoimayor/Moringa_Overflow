@@ -1,27 +1,40 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
 
 
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
+  <div class="col-md-2">
+    <h1>Categories</h1>
+  </div>
+  <div class="col-md-6">
     <div class="card">
       <div class="card-header">
         <h4>MOringa Overflow</h4>
       </div>
-      <div class="card-body">
+      <div  class="card-body card_body">
         <p>Say and you shall get</p>
         <code>all quiz appear here guys </code>
         <a href=""><button  class="btn btn-outline-success" type="button" name="button">Answer</button></a>
 
       </div>
+      <!-- query database for quiz-->
+      <div class="">
+
+      </div>
+
+
 
     </div>
   </div>
-  <div class="col-md-2">
-    <h1>top questions</h1>
+  <div class="col-md-4">
+    <h1 style='text-align:center'>Top questions</h1>
+    <div class="form-group">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#">question 1</a></li>
+      </ul>
+    </div>
   </div>
   </div>
 </div>
