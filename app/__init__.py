@@ -7,8 +7,8 @@ from flask_mail import Mail
 from flask_simplemde import SimpleMDE
 
 login_manager=LoginManager()
-login_manager.session_protection='strong'
-login_manager.login_view='auth.login'
+login_manager.session_protection="strong"
+login_manager.login_view="auth.login"
 db=SQLAlchemy()
 bootstrap=Bootstrap()
 simple=SimpleMDE()

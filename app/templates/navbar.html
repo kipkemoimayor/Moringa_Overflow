@@ -25,21 +25,26 @@
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('main.feeds')}}">Feeds</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
-        </li>
+
+
 
 
         <!-- Dropdown -->
-        <!-- <li class="nav-item dropdown">
+        {%if current_user.is_authenticated%}
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
+            aria-expanded="false">{{current_user.username}} <i class="far fa-user-circle"></i></a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Profile</a>
+            <!-- <a class="dropdown-item" href="#">S</a> -->
+            <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a>
           </div>
-        </li> -->
+        </li>
+        {%else%}
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
+        </li>
+        {%endif%}
 
       </ul>
       <!-- Links -->

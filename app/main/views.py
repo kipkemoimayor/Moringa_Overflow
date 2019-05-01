@@ -15,6 +15,7 @@ def index():
 
 
 @main.route("/questions/ask_a_question/")
+@login_required
 def ask_a_question():
     # title=f"ask a question {current_user.user}"
     #saving to the database
