@@ -7,6 +7,17 @@
 
   <div class="col-md-2">
     <h1>Categories</h1>
+
+    <ul class="list-group">
+      <a href="#"><li class="list-group-item">Flask</li></a>
+      <a href="#"><li class="list-group-item">Django</li></a>
+      <a href="#"><li class="list-group-item">Javascript</li></a>
+      <a href="#"><li class="list-group-item">Postgresql</li></a>
+      <a href="#"><li class="list-group-item">jQuery</li></a>
+      <a href="#"><li class="list-group-item">Boostrap4</li></a>
+      <a href="#"><li class="list-group-item">Html5</li></a>
+    </ul>
+
   </div>
   <div class="col-md-6">
     <div class="card">
@@ -20,14 +31,14 @@
 
       </div>
         </div>
-        
+
 
       <!-- query database for quiz-->
       {%for feed in all_feeds%}
       <div class="card-body us">
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
-          <a href="#">See anwers</a>
+          <a href="{{url_for('main.answer_a_question',id=feed.id)}}">See anwers</a>
       </div>
       {%endfor%}
 

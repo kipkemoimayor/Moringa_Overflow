@@ -44,26 +44,18 @@ def comment():
 
 
 
-# @main.route("/ask",methods=['POST','GET'])
-# def ask_quiz():
-#     title="Ask a Quiz"
-#     form=PostQuestion()
-#     if form.validate_on_submit():
-#         quiz=Question(question=form.question.data,category=form.category.data)
-#         db.session.add(quiz)
-#         db.session.commit()
-#         return redirect(url_for('main.ask_quiz'))
-#     return render_template("post.html",title=title,form=form)
-
-@main.route("/question/answer_a_question/",methods=["GET","POST"])
-def answer_a_question():
-
+@main.route("/question/answer_a_question/<int:id>/",methods=["GET","POST"])
+def answer_a_question(id):
+    question=Question.query.filter_by(id=id).first()
+    answer=Answers.query.filter_by(question_id=id).all()
     answer_form = AnswersForm()
     if answer_form.validate_on_submit():
-        answer = Answers(answer=form.solution.data,question_id = questions.id, user_id = users.id)
-        return redirect (url_for('main.answer_a_question'))
+        answer = Answers(solution=answer_form.solution.data,question_id = question.id, user_id = current_user.id)
+        db.session.add(answer)
+        db.session.commit()
+        return redirect (url_for('main.answer_a_question',id=question.id))
 
-    return render_template("answers.html")
+    return render_template("answers.html",comment_form=answer_form,question=question,answer=answer)
 
 
 @main.route("/feeds/questions",methods=['GET','POST'])
@@ -73,9 +65,10 @@ def feeds():
     all_feeds.reverse()
 
 
+
     title="Feeds"
     return render_template("question.html",title=title,all_feeds=all_feeds)
-    return render_template("question.html",title=title)
+
 
 @main.route('/user/<uname>&<id_user>')
 @login_required
