@@ -95,7 +95,14 @@ def categories(categ):
     #categories
     flask=Question.query.filter_by(category='flask').all()
     python=Question.query.filter_by(category='py').all()
+    javascript=Question.query.filter_by(category='js').all()
+    jQuery=Question.query.filter_by(category='jquery').all()
+    java=Question.query.filter_by(category='java').all()
+    angular=Question.query.filter_by(category='angular').all()
+    django=Question.query.filter_by(category='django').all()
+    html5=Question.query.filter_by(category='html').all()
+    postgresql=Question.query.filter_by(category='post').all()
 
 
     title="categories"
-    return render_template("categories.html",flask=flask,python=python,categ=categ)
+    return render_template("categories.html",flask=flask,python=python,categ=categ,javascript=javascript,jQuery=jQuery,java=java,angular=angular,django=django,html5=html5,postgresql=postgresql)
