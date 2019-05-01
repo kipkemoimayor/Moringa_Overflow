@@ -71,3 +71,21 @@
   border: 1px solid #999E6D;
   margin: 5px;
 }
+.picpro{
+  height: 300px;
+  width: 300px;
+  float: left;
+}
+#prof{
+  font-family: fantasy;
+  font-weight: 500;
+  color: white;
+
+}
+.one2{
+  color:white;
+
+}
+.pro{
+  float: right;
+}
