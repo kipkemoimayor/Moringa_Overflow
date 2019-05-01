@@ -1,9 +1,9 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://antavio:simple@localhost/group_overflow'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
 
-    SECRET_KEY = "qwerty"
+    SECRET_KEY="collo"
 
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True

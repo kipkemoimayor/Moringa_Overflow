@@ -12,6 +12,4 @@ def send_email(subject, sender, recepients, text_body, html_body):
 
 def send_reset_email(user):
     token = user.get_reset_password_token()
-    send_email('Reset Password',sender=app.config['MAIL_USERNAME'],recepients=[user.email],text_body=render_template('auth/reset_password.txt',user=user, token=token),html_body=render_template('auth/reset_password.html',user=user, token=token))
-
-
+    send_email('Reset Password',sender="angeldilorna@gmail.com",recepients=[user.email],text_body=render_template('auth/reset_password.txt',user=user, token=token),html_body=render_template('auth/reset_password.html',user=user, token=token))

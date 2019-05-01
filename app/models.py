@@ -34,7 +34,7 @@ class Users(UserMixin,db.Model):
     @password.setter
     def password(self,password):
         self.pass_secure =generate_password_hash(password)
-    
+
     def set_password(self,password):
         self.pass_secure = generate_password_hash(password)
 
@@ -43,9 +43,9 @@ class Users(UserMixin,db.Model):
 
 
     def get_reset_password_token(self, expires_in=600):
-        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, os.environ.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
+        return jwt.encode({'reset_password':self.id, 'exp':time()+expires_in}, "collo", algorithm='HS256').decode('utf-8')
 
-    
+
     @staticmethod
     def verify_reset_password(token):
         try:
