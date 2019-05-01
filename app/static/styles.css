@@ -109,4 +109,6 @@ body{
 }
 .profile_pic img{
   border-radius: 40px;
+  max-width: 50px;
+  height:auto;
 }
