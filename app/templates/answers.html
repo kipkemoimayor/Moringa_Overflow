@@ -13,12 +13,19 @@
               <hr class="bg-success">
 
               <div class="answers">
+                  {%if answer%}
                 {%for ans in answer%}
+
                 <div class="card-body">
                   <p style="background-color:rgba(0,0,0,0.05)" class="card-footer">{{ans.solution|capitalize}}</p>
                   <div class="card-text text-muted">Posted by:{{ans.owner.username}}</div>
                 </div>
+
                 {%endfor%}
+                  {%else%}
+                  <p class="alert alert-warning">This question has no answers yet</p>
+
+                  {%endif%}
 
               </div>
             </div>
@@ -26,9 +33,11 @@
 
 
             <div class="col-md-5">
+              {%if current_user.is_authenticated%}
 
                 {{ wtf.quick_form(comment_form) }}
                 {{simplemde.load}}
+                {%endif%}
 
                 <br>
             </div>

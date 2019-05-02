@@ -102,6 +102,10 @@ def profile(uname):
     '''
     personal_quiz=Question.query.filter_by(user_id=current_user.id).all()
     user = Users.query.filter_by(username = uname).first()
+    arr=[]
+    for quiz in personal_quiz:
+        arr.append(1)
+    overal_quiz=sum(arr)
 
     title = f"{uname.capitalize()}'s Profile"
 
@@ -110,7 +114,7 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    return render_template('/profile/profile.html', user = user,personal_quiz=personal_quiz, title=title)
+    return render_template('/profile/profile.html', user = user,personal_quiz=personal_quiz, overal_quiz=overal_quiz,title=title)
 
 
 '''
