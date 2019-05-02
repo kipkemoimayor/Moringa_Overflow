@@ -102,13 +102,22 @@ model for solutions
 
 class Answers(db.Model):
     __tablename__='answers'
-    id=id=db.Column(db.Integer,primary_key=True)
+    id=db.Column(db.Integer,primary_key=True)
     solution=db.Column(db.String())
     question_id=db.Column(db.Integer,db.ForeignKey('questions.id'))
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     comments=db.relationship('Comments',backref='commen',lazy='dynamic')
+    comments=db.relationship('Votes',backref='vote',lazy='dynamic')
 
 
+
+
+class Votes(db.Model):
+    __tablename__='votes'
+    comment=db.Column(db.String())
+    id=db.Column(db.Integer,primary_key=True)
+    votes_userid=db.Column(db.Integer)
+    ans_id=db.Column(db.Integer,db.ForeignKey('answers.id'))
 
 
 '''

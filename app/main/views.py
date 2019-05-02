@@ -2,8 +2,8 @@ from . import main
 from flask import render_template,redirect,url_for,abort,flash,request
 from flask_login import login_required,current_user
 from .. import db,photos
-from ..models import Users,Question,Comments,Answers
-from .forms import CommentsForm,PostQuestion,AnswersForm,QuestionForm
+from ..models import Users,Question,Comments,Answers,Votes
+from .forms import CommentsForm,PostQuestion,AnswersForm,QuestionForm,Vote
 
 
 
@@ -55,7 +55,22 @@ def answer_a_question(id):
         db.session.commit()
         return redirect (url_for('main.answer_a_question',id=question.id))
 
-    return render_template("answers.html",comment_form=answer_form,question=question,answer=answer)
+    vote_form=Vote()
+    if vote_form.validate_on_submit():
+        vote=Votes(comment=form.comment.data,votes_userid=current_user.id,ans_id=question.id)
+        db.session.add(vote)
+        db.session.commit()
+
+    total_votes=Votes.query.all()
+    arr=[]
+    for i in total_votes:
+        arr.append(1)
+    yes_votes=sum(arr)
+    return render_template("answers.html",arr=arr,comment_form=answer_form,vote_form=vote_form,question=question,answer=answer,yes_votes=yes_votes)
+
+
+
+    
 
 
 @main.route("/feeds/questions",methods=['GET','POST'])

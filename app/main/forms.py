@@ -22,3 +22,6 @@ class QuestionForm(FlaskForm):
     question = TextAreaField('Post your question')
     submit = SubmitField('Submit')
 
+class Vote(FlaskForm):
+    comment=StringField("Comment")
+    submited=SubmitField("Upvote")
