@@ -29,7 +29,7 @@ def create_app(config_name):
     login_manager.init_app(app)
     simple.init_app(app)
     mail.init_app(app)
-    
+
     # configure UploadSet
     configure_uploads(app,photos)
 

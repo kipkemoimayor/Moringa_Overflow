@@ -1,111 +1,116 @@
-#wueh{
-  color:yellow;
-}
 body{
-  font-family: 'Arvo', cursive;
-  font-size: x-large;
-  /* background-image: url('https://images.pexels.com/photos/172294/pexels-photo-172294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-  background-repeat: no-repeat;
-  background-size: cover; */
-  color:  #29153E;
-
+  font-family: 'Dosis', cursive;
 }
 
-#logo{
-  font-family: 'Arvo', cursive;
+
+
+.languages{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+
+}
+.languages:hover{
+  transition-delay: .2s;
+}
+
+.fa-angular{
+  color: #b22222;
+}
+.fa-js{
+  color: yellow;
+}
+.fa-css3-alt{
+  color: #74ccf4;
+}
+.fa-database{
+  color: grey;
+}
+.fa-star{
+  color: orange;
+}
+.fa-python{
+  color: pink;
+}
+.fa-java{
+  color: #74ccf4;
+}
+.fa-pepper-hot{
+  color: black;
+}
+.fa-facebook, .fa-instagram, .fa-twitter, .fa-github{
+  color: black;
+}
+
+#description{
   font-size: xx-large;
-  color: #a36598;
+  color: white;
   font-weight: bold;
+  margin-top: 20px;
 }
 
-.navbar{
-  padding: 2%;
-  background-color: rgba(41, 21, 62,0.8);
-  width: 100%;
+.options{
+  border: 2px solid green;
+  border-radius: 24px;
+  color: white;
+  font-size: x-large;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
 }
-.bisc{
-
-}
-
-.side-bar{
-  background-color: #ffe4c4;
-  height: 600px;
-
-
-}
-#moringa, #quest{
-  width:100%;
-}
-#account{
-  overflow: hidden;
-  border-radius: 100%;
-  border: 2px solid #637c33 ;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 37%;
-}
-#quest{
-  height: 90px;
-}
-#django{
-  height: 100%;
-  width: 100%;
+.options:hover{
+  background-color: green;
+  color: white;
+  text-decoration: none;
 }
 
-.zoom{
-  border:#a36598;
-}
-.zoom:hover{
-  box-shadow: 5px 5px grey;
-  background-color: #637c33;
-  padding: 0;
-  border-radius: 2%;
-  transition-duration: 0.5s;
-  border: #ffe4c4;
-}
-
-.content-section{
-  margin-top: 16%;
-}
-
-.category{
-  font-family: 'Arvo', cursive;
-  text-transform: uppercase;
+.head{
   color: #29153E;
-  padding-top: 2%;
-  background-color:rgba(0,0,0,0.2);
+  text-transform: uppercase;
   font-size: xx-large;
-}
-.side-bar, .top{
-  position: sticky;
-  z-index: 99;
-
-}
-.sidelinks{
-  text-decoration: none;
-  color: #a36598;
-}
-.sidelinks:hover{
-  text-decoration: none;
+  font-weight: bolder;
 }
 
-.categories{
+.heady{
+  color: #A36598;
+  text-transform: uppercase;
+  font-size: x-large;
+}
+
+.first{
+  padding-top: 20px;
+}
+
+.quest{
+  height: 550px;
   overflow: scroll;
-  scroll-behavior: smooth;
-  height:600px;
   overflow-x: hidden;
 }
-.content-section{
-  border: 2px solid #29153E;
-}
+
 .card-header{
-  background-color:  #ffe4c4;
+  background-color: #637C33;
+  color: white;
 }
-#login, #home, #register{
-  color:  #ffe4c4;
+.footer{
+  background-color: #637C33;
+}
+.logos{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  background-color: #637C33;
+  padding-bottom: 12px;
+
+}
+
+.logos img{
+  width: 100px;
+  height: 50px;
+}
+
+.allthings{
+  background-color: #637C33;
 }
 .profile_pic img{
   border-radius: 40px;

@@ -7,7 +7,12 @@
         <div class="overlay">
         <div id="serial" class="col-md-6">
           <div class="size">
-            <h1 class="tops">code</h1> <h1 class="tops">Error</h1> <a class="tops a btn btn-outline-success" href="{{url_for('main.ask_a_question')}}">Ask <i class="fas fa-search"></i></a>
+
+              <a href="#"><p class="options">Post an Error</p></a>
+              <a href="#"><p class="options">Post a Solution</p></a>
+              <a href="#"><p class="options">Ask a TM</p></a>
+              <a href="#languages"><p class="options">View Languages</p></a>
+             <a class="tops a btn btn-outline-success" href="{{url_for('main.ask_a_question')}}">Ask <i class="fas fa-search"></i></a>
 
           </div>
         </div>
@@ -21,7 +26,12 @@
     </div>
 
 
-  </div>
+
+        </div>
+
+
+
+
 
 
 <div class="container-fluid">
@@ -62,51 +72,52 @@
 
 
   </div>
-
-</div>
-<!-- Card -->
-
   </div>
 
 
 </div>
-<div id="home"  class="row">
+</div>
+<hr class="bg-success">
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="text-center head">Pick A Place To Start</h1>
+    <h3 class="text-center heady">from classes offered at Moringa</h3><br><br>
+    <div class=" container languages">
 
-    <div class="col-md-3">
-      <p>Languages</p>
-      <div class="language">
-        <br>
-        Js
-        <hr>
-        Css
-        <hr>
-        jquery
-      </div>
+    <a href="#"><i class="fab fa-angular fa-5x"></i><br><p class="">Angular</p></a>
+    <a href="#"><i class="fab fa-java fa-5x"></i><br><p class="">Java</p></a>
+    <a href="#"><i class="fab fa-js fa-5x"></i><br><p class="">Javascript</p></a>
+    <a href="#"><i class="fab fa-python fa-5x"></i><br><p class="">Python</p></a>
+    <a href="#"><i class="fas fa-pepper-hot fa-5x fa-flip-horizontal"></i><br><p class="">Flask</p></a>
+    <!-- <img src="http://flask.pocoo.org/docs/0.12/_static/flask.png" alt=""><br><p class="">Flask</p> -->
+    <a href="#"><i class="fab fa-css3-alt fa-5x"></i><br><p class="">HTML/CSS</p></a>
+    <a href="#"><i class="far fa-star fa-5x"></i><br><p class="">Spark</p></a>
+    <a href="#"><i class="fas fa-database fa-5x"></i><br><p class="">SQL</p></a>
+    </div><br><br>
 
-    </div>
-    <div class="col-md-3">
-      <div class="language">
-
-        <img class="img-fluid" src="https://moringaschool.com/static/img/main-logo.png" alt="">
-
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="language">
-        <br>
-        Python
-        <hr>
-        Django
-        <hr>
-        Bootstrap4
-
-      </div>
-    </div>
+  </div>
 
 </div>
 
+
+<!-- Card -->
+
+  </div>
+  <div class="allthings">
+  <h1 class="text-center">Connect with us</h1>
+  <div class="container-fluid logos">
+      <a href="#"><img src="https://moringaschool.com/static/img/main-logo.png" alt=""></a>
+      <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="#"><i class="fab fa-github fa-2x"></i></a>
+
+  </div>
+  </div>
+
 </div>
-<!-- Footer -->
+
 
 <!-- Footer -->
 {% endblock %}

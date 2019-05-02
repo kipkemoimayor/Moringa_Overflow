@@ -40,7 +40,9 @@
       <div class="card-body us">
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
+
           <a href="{{url_for('main.answer_a_question',id=feed.id)}}">See anwers</a>
+          
       </div>
       {%endfor%}
 
