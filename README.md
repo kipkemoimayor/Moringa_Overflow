@@ -1,4 +1,4 @@
-# One minute Pitch App
+# Mringa Overflow
 #### This is a Python web application using Flask framework and Postgresql, 2019
 
 ## Description

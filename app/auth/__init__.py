@@ -1,9 +1,3 @@
-..........
-from flask_simplemde import SimpleMDE
-.....
-simple = SimpleMDE()
-
-def create_app(config_name):
-    app = Flask(__name__)
-    ........
-    simple.init_app(app)
+from flask import Blueprint
+auth=Blueprint('auth',__name__)
+from . import views,forms

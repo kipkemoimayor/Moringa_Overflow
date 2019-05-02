@@ -17,8 +17,6 @@ $(document).ready(function () {
     showConfirmButton:false
   })
 })
-  $(".profile").hide()
-  $("#change").show()
   /*business logig*/
 
   $("#dele").click(function(){
@@ -44,7 +42,22 @@ $(document).ready(function () {
 
   })
 
-})
+  $("#yespro").mouseover(function(){
+    $("#change").show()
+  })
+  $("#change").click(function(){
+    $(".pro").show()
+    $("#change").hide()
+  })
+  $("#yespro").mouseleave(function(){
+    $("#change").hide()
+
+
+  })
+  $("#update").click(function(){
+    $("#change").hide()
+  })
+
 
 
 define(function (require, exports, module) {
