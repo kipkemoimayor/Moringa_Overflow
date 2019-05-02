@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 import jwt
 import os
 from time import time
+from datetime import datetime
 
 '''
 geting the users by id
@@ -26,6 +27,8 @@ class Users(UserMixin,db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
     answers=db.relationship('Answers',backref='owner',lazy='dynamic')
+    # moringa_overflow = db.relationship('moringa_overflow', backref='author', lazy='dynamic')
+    # comments = db.relationship('Comments', backref='author', lazy='dynamic')
 
 
     @property
@@ -109,14 +112,22 @@ class Answers(db.Model):
     comments=db.relationship('Comments',backref='commen',lazy='dynamic')
 
 
-
-
-'''
-models for comments
-'''
-
 class Comments(db.Model):
-    __tablename__='comments'
-    id=id=db.Column(db.Integer,primary_key=True)
-    comment=db.Column(db.String())
-    answer_id=db.Column(db.Integer,db.ForeignKey('answers.id'))
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String(255))
+    date_posted = db.Column(db.DateTime(250), default=datetime.utcnow)
+    moringa_overflow_id = db.Column(db.Integer, db.ForeignKey("moringa_overflow.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comment(cls,id):
+        comments = Comments.query.filter_by(moringa_overflow_id=id).all()
+        return comments
+
+    def __repr__(self):
+        return f"Comments('{self.comment}', '{self.date_posted}')"
