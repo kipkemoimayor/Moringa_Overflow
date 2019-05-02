@@ -56,6 +56,7 @@ $(document).ready(function () {
   })
   $("#update").click(function(){
     $("#change").hide()
+    $(".pro").hide()
   })
 
 
