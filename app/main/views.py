@@ -4,6 +4,7 @@ from flask_login import login_required,current_user
 from .. import db,photos
 from ..models import Users,Question,Comments,Answers,Votes
 from .forms import CommentsForm,PostQuestion,AnswersForm,QuestionForm,Vote
+import markdown2
 
 
 
@@ -48,6 +49,7 @@ def comment():
 def answer_a_question(id):
     question=Question.query.filter_by(id=id).first()
     answer=Answers.query.filter_by(question_id=id).all()
+    answere=Answers.query.filter_by(question_id=id).first()
     answer_form = AnswersForm()
     if answer_form.validate_on_submit():
         answer = Answers(solution=answer_form.solution.data,question_id = question.id, user_id = current_user.id)
@@ -55,18 +57,12 @@ def answer_a_question(id):
         db.session.commit()
         return redirect (url_for('main.answer_a_question',id=question.id))
 
-    vote_form=Vote()
-    if vote_form.validate_on_submit():
-        vote=Votes(comment=form.comment.data,votes_userid=current_user.id,ans_id=question.id)
-        db.session.add(vote)
-        db.session.commit()
 
-    total_votes=Votes.query.all()
-    arr=[]
-    for i in total_votes:
-        arr.append(1)
-    yes_votes=sum(arr)
-    return render_template("answers.html",arr=arr,comment_form=answer_form,vote_form=vote_form,question=question,answer=answer,yes_votes=yes_votes)
+    format_question=markdown2.markdown(question.question,extras=['code-friendly','fenced-code-blocks'])
+    format_answer=markdown2.markdown(answere.solution,extras=['code-friendly','fenced-code-blocks'])
+
+
+    return render_template("answers.html",format_answer=format_answer,comment_form=answer_form,question=question,answer=answer,format_question=format_question)
 
 
 
@@ -89,8 +85,8 @@ def feeds():
 
 
 
-
     title="Feeds"
+
     return render_template("question.html",title=title,all_feeds=all_feeds,question_count=question_count)
 
 

@@ -41,6 +41,7 @@
           <span>aksked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted}}</i>
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
+        
 
           <a href="{{url_for('main.answer_a_question',id=feed.id)}}">view anwers</a>
           <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{feed.category}}</span>

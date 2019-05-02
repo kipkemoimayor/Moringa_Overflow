@@ -141,5 +141,10 @@
 }
 .post{
   background-color:#999E6D;
-  color:white; 
+  color:white;
+}
+.quiz-body img{
+  height: 300px;
+  width: 300px;
+
 }

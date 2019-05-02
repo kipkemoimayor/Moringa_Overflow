@@ -9,7 +9,12 @@
           </div>
         <div class="row">
             <div class="col-md-7">
-              <h5>{{question.question | capitalize}}</h5>
+              <i style="color:#898;" class='' >Asked  by ~~ {{question.user.username}} on {{question.posted}} </i>
+              <div class="quiz-body">
+                <h5>  {{format_question|safe}}</h5>
+              </div>
+
+
               <hr class="bg-success">
 
               <div class="answers">
