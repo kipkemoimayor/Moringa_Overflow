@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://antavio:simple@localhost/group_overflow'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://antavio:qwerty@localhost/group_overflow'
 
     SECRET_KEY = "qwerty"
 
