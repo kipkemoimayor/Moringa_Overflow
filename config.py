@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://student:1234@localhost/moringa_overflow'
 
     SECRET_KEY="collo"
 
