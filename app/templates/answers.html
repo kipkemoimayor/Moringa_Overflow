@@ -3,23 +3,24 @@
 
 {% block content %}
     <div class="container" style="background-color:rgba(194, 160, 160, 0.089)">
-            <h2 class="tile">{{question.title}}</h2>
+            <h2 class="tile"><strong>{{question.title |capitalize}}</strong></h2>
             <hr>
         <div class="row">
             <div class="col-md-7">
-              <p>{{question.question}}</p>
+              <p>{{question.question | capitalize}}</p>
               <hr class="bg-success">
 
               <div class="answers">
                 {%for ans in answer%}
                 <div class="card-body">
-                  <p>{{ans.solution}}</p>
-                  <i>{{ans.owner.username}}</i>
+                  <p class="card-footer">{{ans.solution|capitalize}}</p>
+                  <div class="card-text text-muted">Posted by:{{ans.owner.username}}</div>
                 </div>
                 {%endfor%}
 
               </div>
             </div>
+
 
 
             <div class="col-md-5">
