@@ -136,3 +136,10 @@
 .list-group-item{
   color: black;
 }
+.jum{
+  background-color: rgba(194, 160, 160, 0.089);
+}
+.post{
+  background-color:#999E6D;
+  color:white; 
+}
