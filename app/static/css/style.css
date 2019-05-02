@@ -103,3 +103,12 @@
 .title{
   background-color:#999E6D !important;
 }
+#solution_submit{
+  background-color:green !important;
+  border-color: green !important;
+  text-align: center !important;
+}
+#solution{
+  color: white !important;
+  background-color: black !important;
+}
