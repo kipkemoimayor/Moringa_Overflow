@@ -1,9 +1,9 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
-
-    SECRET_KEY="collo"
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://elizabeth:123@localhost/moringa_overflow'
+    SQLALCHEMY_TRACK_MODIFICATIONS=False
+    SECRET_KEY="lizzy"
 
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
