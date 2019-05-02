@@ -130,10 +130,10 @@ def categories(categ):
     django=Question.query.filter_by(category='django').all()
     html5=Question.query.filter_by(category='html').all()
     postgresql=Question.query.filter_by(category='post').all()
-
+    all_feeds=Question.query.all()
 
     title="categories"
-    return render_template("categories.html",flask=flask,python=python,categ=categ,javascript=javascript,jQuery=jQuery,java=java,angular=angular,django=django,html5=html5,postgresql=postgresql)
+    return render_template("categories.html",flask=flask,python=python,categ=categ,javascript=javascript,jQuery=jQuery,java=java,angular=angular,django=django,html5=html5,postgresql=postgresql,all_feeds=all_feeds)
     if user is None:
         abort(404)
 

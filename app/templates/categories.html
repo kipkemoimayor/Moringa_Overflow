@@ -139,11 +139,11 @@
   </div>
   <div class="col-md-4">
     <h1 style='text-align:center'>Top questions</h1>
+      {%for lan in all_feeds%}
     <div class="form-group">
-      <ul class="list-group">
-        <li class="list-group-item"><a href="#">question 1</a></li>
-      </ul>
+    <a href="{{url_for('main.answer_a_question',id=lan.id)}}">{{lan.title | capitalize}}</a>
     </div>
+      {%endfor%}
   </div>
   </div>
 </div>
