@@ -64,10 +64,19 @@ def feeds():
     all_feeds=Question.query.all()
     all_feeds.reverse()
 
+    count_feed=Answers.query.filter_by(question_id=1).all()
+    arr=[]
+    for i in count_feed:
+        arr.append(1)
+
+    question_count=sum(arr)
+
+
+
 
 
     title="Feeds"
-    return render_template("question.html",title=title,all_feeds=all_feeds)
+    return render_template("question.html",title=title,all_feeds=all_feeds,question_count=question_count)
 
 
 @main.route('/user/<uname>')
