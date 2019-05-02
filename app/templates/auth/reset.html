@@ -11,19 +11,21 @@
             {% endfor %}
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-5">
-            <h1>Reset Password</h1>
-            <form action="" method="POST">
+    <div class="row reset">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+            <h1> Reset Password</h1>
+            <form class="form-group" action="" method="POST">
                 {{form.hidden_tag()}}
-                <p> {{form.email.label}} </p>
-                <p> {{form.email(size=64)}} </p>
+                <h4 class="form-group">{{form.email.label}}: </h4>
+                <p class="form-group"> {{form.email(size=64)}} </p>
                 {% for error in form.email.errors %}
                 <p><span style="color: red;"> {{error}} </span></p> 
                 {% endfor %}
-                <p> {{form.submit()}} </p>
+                <h4 class="form-group"> {{form.submit()}} </h4>
             </form>
         </div>
+        
     </div>
 </div>
 {% endblock %}

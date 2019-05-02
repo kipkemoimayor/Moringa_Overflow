@@ -103,3 +103,20 @@
 .title{
   background-color:#999E6D !important;
 }
+#email{
+  padding: 6px !important;
+  border-radius: 15px;
+  
+}
+
+.reset{
+  margin-top: 30px;
+  
+}
+#submit{
+  background-color: #259BDA;
+  border-radius: 15px;
+}
+#submit:hover{
+  background-color: #E82E2E;
+}
