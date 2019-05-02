@@ -27,7 +27,7 @@ class Users(UserMixin,db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
     answers=db.relationship('Answers',backref='owner',lazy='dynamic')
-    posted = db.Column(db.DateTime,default=datetime.utcnow)
+
 
 
 
@@ -96,6 +96,7 @@ class Question(db.Model):
     category=db.Column(db.String())
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     answers=db.relationship('Answers',backref='quiz',lazy='dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
 
@@ -111,6 +112,7 @@ class Answers(db.Model):
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     comments=db.relationship('Comments',backref='commen',lazy='dynamic')
     comments=db.relationship('Votes',backref='vote',lazy='dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
 
