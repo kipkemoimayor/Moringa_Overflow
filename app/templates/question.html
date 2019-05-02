@@ -38,7 +38,7 @@
       <!-- query database for quiz-->
       {%for feed in all_feeds%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{feed.user.username}}</i>
+          <span>aksked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted}}</i>
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
 
