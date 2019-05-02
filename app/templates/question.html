@@ -23,19 +23,16 @@
   </div>
   <div class="col-md-6">
     <div class="card">
-      <div class="card-header">
-        <h4>MOringa Overflow</h4>
-      </div>
+
       <div  class="card-body card_body">
-        <p>Say and you shall get</p>
-        <code>all quiz appear here guys </code>
-        <a href=""><button  class="btn btn-outline-success" type="button" name="button">Answer</button></a>
+        <p class="text-center answer">"What do we say to the god of errors?"<br><br>"Not Today!"</p>
 
       </div>
         </div>
 
 
       <!-- query database for quiz-->
+      <div class="scroll">
       {%for feed in all_feeds%}
       <div class="card-body us">
           <span>aksked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted}}</i>
@@ -48,7 +45,7 @@
 
 
       </div>
-      {%endfor%}
+      </div>
 
 
 
