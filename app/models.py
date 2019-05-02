@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash,check_password_hash
 import jwt
 import os
 from time import time
+from datetime import datetime
 
 '''
 geting the users by id
@@ -26,6 +27,8 @@ class Users(UserMixin,db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
     answers=db.relationship('Answers',backref='owner',lazy='dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+
 
 
     @property
