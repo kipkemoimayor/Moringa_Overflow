@@ -1,4 +1,4 @@
-# One minute Pitch App
+# Moringa Overflow
 #### This is a Python web application using Flask framework and Postgresql, 2019
 
 ## Description
