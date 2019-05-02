@@ -93,7 +93,8 @@
             <div class="on">
               <div  class="jumbotron title">
                 <h5>{{quzi.title}}</h5>
-                <i class="vom">Cetegory {{quzi.category}}</i>
+              
+                  <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{quzi.category}}</span>
                 <a  href="{{url_for('main.answer_a_question',id=quzi.id)}}">See answers</a>
               </div>
 

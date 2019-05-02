@@ -70,7 +70,7 @@ def answer_a_question(id):
 
 
 
-    
+
 
 
 @main.route("/feeds/questions",methods=['GET','POST'])
@@ -79,7 +79,7 @@ def feeds():
     all_feeds=Question.query.all()
     all_feeds.reverse()
 
-    count_feed=Answers.query.filter_by(question_id=1).all()
+    count_feed=Answers.query.all()
     arr=[]
     for i in count_feed:
         arr.append(1)
