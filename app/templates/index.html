@@ -1,195 +1,123 @@
 {% extends 'base.html' %}
 {% block content %}
 
+  <div class="image">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="overlay">
+        <div id="serial" class="col-md-6">
+          <div class="size">
 
-  <header class="site-header">
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-     <div class="container">
-       <a class="navbar-brand mr-4" href="/" id="legend"><span id="logo">Moringa Overflow</span></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarToggle">
-         <div class="navbar-nav mr-auto">
-           <ul class="navbar-nav mr-auto">
-             <li class="nav-item">
-               <a class="nav-link bisc"  id="home" href="#">Home</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link bisc" id="login" href="#">Login</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link bisc" id="register" href="#">Register</a>
-             </li>
-           </ul>
-         </div>
-         <!-- Navbar Right Side -->
-         <div class="navbar-nav">
-           <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-           </form>
-         </div>
-       </div>
-     </div>
-   </nav>
-  </header>
+              <a href="#"><p class="options">Post an Error</p></a>
+              <a href="#"><p class="options">Post a Solution</p></a>
+              <a href="#"><p class="options">Ask a TM</p></a>
+              <a href="#languages"><p class="options">View Languages</p></a>
+             <a class="tops a btn btn-outline-success" href="{{url_for('main.ask_a_question')}}">Ask <i class="fas fa-search"></i></a>
 
-<!-- content begins here -->
-<div class="info-page">
-<div class="container">
-  <div class="row">
-    <div class="col-md-5">
-      <p id="description">"Because we believe it is the spirit of peer programming that drives the Moringa Community"<br>~Audrey Cheng</p>
-    </div>
-    <div class="col-md-4">
+          </div>
+        </div>
+        </div>
+        <div id="happy" class="col-md-6">
+
+        </div>
+
+      </div>
 
     </div>
-    <div class="col-md-3">
-      <a href="#"><p class="options">Post an Error</p></a>
-      <a href="#"><p class="options">Post a Solution</p></a>
-      <a href="#"><p class="options">Ask a TM</p></a>
-      <a href="#languages"><p class="options">View Languages</p></a>
+
+
+
+        </div>
+
+
+
+
+
+
+<div class="container-fluid">
+<div class="row one">
+  <div class="col-md-6">
+    <div class="desc">
+      <br>
+    <h3>Over 1000 questions and answers</h3>
+    <p>Seach for a solution an any category</p>
+    <h1>&#9829 &#9829</h1>
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="find a solution" aria-label="Search">
+      </div>
+    </form>
     </div>
+
   </div>
-</div>
+  <div class="col-md-6">
+    <!-- Card -->
+<div class="card card-cascade wider reverse">
 
-</div><br><br>
+  <!-- Card image --
 
-<h1 class="text-center head">Pick A Place To Start</h1>
-<h3 class="text-center heady">from classes offered at Moringa</h3><br><br>
-<div class=" container languages">
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
 
-<a href="#"><i class="fab fa-angular fa-5x"></i><br><p class="">Angular</p></a>
-<a href="#"><i class="fab fa-java fa-5x"></i><br><p class="">Java</p></a>
-<a href="#"><i class="fab fa-js fa-5x"></i><br><p class="">Javascript</p></a>
-<a href="#"><i class="fab fa-python fa-5x"></i><br><p class="">Python</p></a>
-<a href="#"><i class="fas fa-pepper-hot fa-5x fa-flip-horizontal"></i><br><p class="">Flask</p></a>
-<!-- <img src="http://flask.pocoo.org/docs/0.12/_static/flask.png" alt=""><br><p class="">Flask</p> -->
-<a href="#"><i class="fab fa-css3-alt fa-5x"></i><br><p class="">HTML/CSS</p></a>
-<a href="#"><i class="far fa-star fa-5x"></i><br><p class="">Spark</p></a>
-<a href="#"><i class="fas fa-database fa-5x"></i><br><p class="">SQL</p></a>
-</div><br><br>
+    <!-- Title -->
+    <h4 class="card-title"><strong>Moringa flow</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">Questions and answers</h6>
+    <!-- Text -->
+    <p class="card-text">Moringa Overflow is a community full of developers ready to help out in any field, If you have Any programming issue Then you are at the right place, Just ask and Experienced Coers are Out here ti help you
+    </p>
+    <i>Remember even the best of the best once learned and asked Questions </i>
+
+    <button class="btn btn-outline-success" type="button" name="button">View Question</button>
 
 
-<div class="container quest">
-  <div class="row first">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-header">
-        <p>  Q: I have some categories (titled stuff like "Animals" and "Misc") and clicking on a category opens a modal---ideally I want the modal to also show the category title. How can I append a specific JS obj value to the modal it was clicked on? For instance, clicking on the category titled "Animals" opens a modal and the title "Animals" should appear in the modal as well.</p>
-        </div>
-        <div class="card-body">
-
-          <p class="card-text">// creating the category divs
-          let $host = $("#host");
-          for (var i = 0; i < categs.length; i++) {
-            let $template = $("#template").clone();
-            $template.find(".cat-box > .cat-title").text(categs[i].Title);
-            $host.append($template.html());
-          }
-
-          $("#modal-id").on("show.bs.modal", function(evt) {
-
-            let title = _categories.map(function(val) {
-              return val.Title;
-            })
-
-            $(".modal-title").empty();
-            $(".modal-title").text(title); // ----- This shows everything, [0] shows the first item...can I get [i] to work?
-            console.log(title);
-          })</p>
-
-        </div>
-      </div><br>
-      <div class="card">
-        <div class="card-header">
-          Q: I'm trying to use Flask but I keep getting an error that says 'Flask Module Not Found'. How do I go about this?
-        </div>
-        <div class="card-body">
-          <p class="card-text">Try using 'python3.6 -m pip install flask' command instead of the basic pip install. Works all the time</p>
-        </div>
-      </div><br>
-      <div class="card">
-        <div class="card-header">
-          <p>Q: I am trying to use a custom user model and I am working with the AbstractBaseUser class. However, when I try to create a new user from the admin end, I get this error:"cannot unpack non-iterable NoneType object"</p>
-        </div>
-        <div class="card-body">
-
-          <p class="card-text">var th = d3.select(selection).select("thead").selectAll("th")
-              .data(colspec)
-              .enter().append("th")
-              .text(function(d) { return d["data-name"]; })
-              .attr("data-class", function(d) {
-                  if ("data-class" in d) {
-                      return d["data-class"];
-                  } else {
-                      return "";
-                  }
-              })
-              .attr("data-hide", function(d) {
-                  if ("data-hide" in d) {
-                      return d["data-hide"];
-                  } else {
-                      return "";
-                  }
-              })
-              .attr("data-ignore", function(d) {
-                  if ("data-ignore" in d) {
-                      return d["data-ignore"];
-                  } else {
-                      return "";
-                  }
-              })
-
-         etc..</p>
-
-        </div>
-      </div><br>
-      <div class="card">
-        <div class="card-header">
-          <p>Q: When working with flask I got errors on my terminal saying 'cannot find 'drivername'' on modules that I don't eve have on my system. What could this be</p>
-        </div>
-        <div class="card-body">
-
-          <p class="card-text">Such problems are usually just a matter of configurations. If you get this error while working on localhost 5000, make sure your configurations are set to 'development' instead of 'production'. Also make sure you use the 'pass' keyword on DevConfig so that the Database URL is not read. I'm assuming this was the Blog IP. You can check my code on github for clarificaton.</p>
-
-        </div>
-      </div><br>
-    </div>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-        <p>Top Questions</p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Question 1</li>
-          <li class="list-group-item">Question 2</li>
-          <li class="list-group-item">Question 3</li>
-          <li class="list-group-item">Question 4</li>
-          <li class="list-group-item">Question 5</li>
-        </ul>
-    </div>
-    </div>
   </div>
-</div><br><br>
-<div class="allthings">
-<h1 class="text-center size">Connect with us</h1>
-<div class="container-fluid logos">
-    <a href="#"><img src="https://moringaschool.com/static/img/main-logo.png" alt=""></a>
-    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-    <a href="#"><i class="fab fa-github fa-2x"></i></a>
+  </div>
+
 
 </div>
 </div>
+<hr class="bg-success">
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="text-center head">Pick A Place To Start</h1>
+    <h3 class="text-center heady">from classes offered at Moringa</h3><br><br>
+    <div class=" container languages">
+
+    <a href="#"><i class="fab fa-angular fa-5x"></i><br><p class="">Angular</p></a>
+    <a href="#"><i class="fab fa-java fa-5x"></i><br><p class="">Java</p></a>
+    <a href="#"><i class="fab fa-js fa-5x"></i><br><p class="">Javascript</p></a>
+    <a href="#"><i class="fab fa-python fa-5x"></i><br><p class="">Python</p></a>
+    <a href="#"><i class="fas fa-pepper-hot fa-5x fa-flip-horizontal"></i><br><p class="">Flask</p></a>
+    <!-- <img src="http://flask.pocoo.org/docs/0.12/_static/flask.png" alt=""><br><p class="">Flask</p> -->
+    <a href="#"><i class="fab fa-css3-alt fa-5x"></i><br><p class="">HTML/CSS</p></a>
+    <a href="#"><i class="far fa-star fa-5x"></i><br><p class="">Spark</p></a>
+    <a href="#"><i class="fas fa-database fa-5x"></i><br><p class="">SQL</p></a>
+    </div><br><br>
+
+  </div>
+
+</div>
 
 
+<!-- Card -->
+
+  </div>
+  <div class="allthings">
+  <h1 class="text-center">Connect with us</h1>
+  <div class="container-fluid logos">
+      <a href="#"><img src="https://moringaschool.com/static/img/main-logo.png" alt=""></a>
+      <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="#"><i class="fab fa-github fa-2x"></i></a>
+
+  </div>
+  </div>
+
+</div>
 
 
-
-
-
-
+<!-- Footer -->
 {% endblock %}

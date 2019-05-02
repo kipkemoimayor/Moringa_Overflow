@@ -1,0 +1,131 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container-fluid">
+  <div class="row">
+
+
+  <div class="col-md-2">
+    <h1>Categories</h1>
+
+    <ul class="list-group">
+      <a href="{{url_for('main.categories',categ='flask')}}"><li class="list-group-item">Flask</li></a>
+      <a href="{{url_for('main.categories',categ='Django')}}"><li class="list-group-item">Django</li></a>
+      <a href="{{url_for('main.categories',categ='Javascript')}}"><li class="list-group-item">Javascript</li></a>
+      <a href="{{url_for('main.categories',categ='Postgresql')}}"><li class="list-group-item">Postgresql</li></a>
+      <a href="{{url_for('main.categories',categ='jQuery')}}"><li class="list-group-item">jQuery</li></a>
+      <a href="{{url_for('main.categories',categ='Python')}}"><li class="list-group-item">Python3.6</li></a>
+      <a href="{{url_for('main.categories',categ='Html5')}}"><li class="list-group-item">Html5</li></a>
+      <a href="{{url_for('main.categories',categ='Java')}}"><li class="list-group-item">Java</li></a>
+      <a href="{{url_for('main.categories',categ='Angular')}}"><li class="list-group-item">Angular</li></a>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4>MOringa Overflow</h4>
+      </div>
+      <div  class="card-body card_body">
+        <p>Say and you shall get</p>
+        <code>all quiz appear here guys </code>
+        <a href=""><button  class="btn btn-outline-success" type="button" name="button">Answer</button></a>
+
+      </div>
+        </div>
+
+
+      <!-- query database for quiz-->
+      {%if categ=='flask'%}
+      {%for cat in flask%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Python'%}
+      {%for cat in python%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Django'%}
+      {%for cat in django%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Javascript'%}
+      {%for cat in javascript%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Postgresql'%}
+      {%for cat in postgresql%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='jQuery'%}
+      {%for cat in jQuery%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+
+      {%elif categ=='Html5'%}
+      {%for cat in html5%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Angular'%}
+      {%for cat in angular%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+      {%elif categ=='Java'%}
+      {%for cat in java%}
+      <div class="card-body us">
+          <h3>{{cat.title}}</h3>
+          <p>{{cat.question | truncate(200)}}</p>
+          <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
+      </div>
+      {%endfor%}
+
+      {%else%}
+      <p>{{categ}}  is not available</p>
+      {%endif%}
+
+
+
+
+  </div>
+  <div class="col-md-4">
+    <h1 style='text-align:center'>Top questions</h1>
+    <div class="form-group">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#">question 1</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+{%endblock%}

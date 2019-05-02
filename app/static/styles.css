@@ -2,12 +2,7 @@ body{
   font-family: 'Dosis', cursive;
 }
 
-.info-page{
-  background-image: url('https://images.pexels.com/photos/1153213/pexels-photo-1153213.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=940');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 600px;
-}
+
 
 .languages{
   display: flex;
@@ -105,8 +100,7 @@ body{
   justify-content: space-around;
   margin-top: 40px;
   background-color: #637C33;
-  /* padding-top: 25px; */
-padding-bottom: 12px;
+  padding-bottom: 12px;
 
 }
 
@@ -117,4 +111,9 @@ padding-bottom: 12px;
 
 .allthings{
   background-color: #637C33;
+}
+.profile_pic img{
+  border-radius: 40px;
+  max-width: 50px;
+  height:auto;
 }

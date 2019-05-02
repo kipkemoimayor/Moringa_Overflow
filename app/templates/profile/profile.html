@@ -1,0 +1,116 @@
+
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<div class="container-fluid">
+  <div class="row">
+
+
+  <div class="col-md-3">
+    <h1>Categories</h1>
+
+    <ul class="list-group">
+      <a href="{{url_for('main.categories',categ='flask')}}"><li class="list-group-item">Flask</li></a>
+      <a href="{{url_for('main.categories',categ='Django')}}"><li class="list-group-item">Django</li></a>
+      <a href="{{url_for('main.categories',categ='Javascript')}}"><li class="list-group-item">Javascript</li></a>
+      <a href="{{url_for('main.categories',categ='Postgresql')}}"><li class="list-group-item">Postgresql</li></a>
+      <a href="{{url_for('main.categories',categ='jQuery')}}"><li class="list-group-item">jQuery</li></a>
+      <a href="{{url_for('main.categories',categ='Python')}}"><li class="list-group-item">Python3.6</li></a>
+      <a href="{{url_for('main.categories',categ='Html5')}}"><li class="list-group-item">Html5</li></a>
+      <a href="{{url_for('main.categories',categ='Java')}}"><li class="list-group-item">Java</li></a>
+      <a href="{{url_for('main.categories',categ='Angular')}}"><li class="list-group-item">Angular</li></a>
+    </ul>
+
+  </div>
+  <div class="col-md-9">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{user.username}} Profile</h4>
+      </div>
+
+
+      {% if user.profile_pic_path %}
+      <div id="yespro" style="background-image:url({{url_for('static',filename=user.profile_pic_path)}})" class="card-body">
+        {%else%}
+        <div id="yespro" style="" class="card-body">
+          {%endif%}
+        <div class="picpro">
+          <div class="avatar mx-auto white">
+            {% if user.profile_pic_path %}
+            <img  src="{{url_for('static',filename=user.profile_pic_path)}}" alt="profile avatar" class="img-fluid rounded-circle">
+            {%else%}
+            <img src="/static/photos/Avatar.png" alt="profile avatar" class="img-responsive rounded-circle">
+            {% endif %}
+          </div>
+          <h1 id="prof">{{user.username}}</h1>
+          <p class="one2">Account:User</p>
+          <p class="one2">status:Active</p>
+        </div>
+        <div class="pro  animated fadeIn">
+          <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="photo" value="" required>
+            <input  id="update" class="btn btn btn-outline-success" type="submit" name="" value="Save">
+          </form>
+
+        </div>
+        <button id="change" class="btn btn-outline-success" type="button" name="button">Change Profile</button>
+
+      </div>
+
+      <h1 style="text-align:center">My Questions</h1>
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="no">
+
+          </div>
+          <!-- Card -->
+<div class="card card-cascade wider reverse">
+
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h4 class="card-title">Hello {{current_user.username}} <strong>Post ask a question or help others</strong></h4>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2"><a href="{{url_for('main.feeds')}}"><button class="btn default-color" type="button" name="button">Get started Here</button></a></h6>
+
+  </div>
+
+</div>
+<!-- Card -->
+
+        </div>
+
+          {%for quzi in personal_quiz%}
+
+        <div class="col-md-6">
+
+          <div class="one">
+            <div class="on">
+              <div  class="jumbotron title">
+                <h5>{{quzi.title}}</h5>
+                <i class="vom">Cetegory {{quzi.category}}</i>
+                <a  href="{{url_for('main.answer_a_question',id=quzi.id)}}">See answers</a>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+          {%endfor%}
+      </div>
+
+        </div>
+
+  </div>
+  </div>
+</div>
+
+{% endblock %}

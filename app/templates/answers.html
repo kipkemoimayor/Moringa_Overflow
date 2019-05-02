@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="container" style="background-color:rgba(194, 160, 160, 0.089)">
+            <h2 class="tile">{{question.title}}</h2>
+            <hr>
+        <div class="row">
+            <div class="col-md-7">
+              <p>{{question.question}}</p>
+              <hr class="bg-success">
+
+              <div class="answers">
+                {%for ans in answer%}
+                <div class="card-body">
+                  <p>{{ans.solution}}</p>
+                  <i>{{ans.owner.username}}</i>
+                </div>
+                {%endfor%}
+
+              </div>
+            </div>
+
+
+            <div class="col-md-5">
+
+                {{ wtf.quick_form(comment_form) }}
+                {{simplemde.load}}
+
+                <br>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

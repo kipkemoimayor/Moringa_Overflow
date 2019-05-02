@@ -1,21 +1,30 @@
 {%extends "bootstrap/base.html"%}
-{%block content%}
-{%block styles%}
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
- <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.css')}}">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
- <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
- <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
- <script src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
- <script src="{{ url_for('static', filename='js/mdb.js')}}"></script>
- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
- <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+{% block navbar %}
+    {% include 'navbar.html' %}
 
- <!--Importing the simple mde css and js files  -->
 
 {% endblock %}
+{%block content%}
+{%block styles%}
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Palanquin" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.css')}}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/mdb.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+  <!--Importing the simple mde css and js files  -->
+  {{ simplemde.css}}
+  {{ simplemde.js }}
+{% endblock %}
+{%block footer%}
+{%include 'footer.html'%}
+{%endblock%}
 {%endblock%}

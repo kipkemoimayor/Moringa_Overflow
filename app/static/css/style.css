@@ -1,0 +1,105 @@
+.image{
+  position: relative;
+
+  background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+}
+.overlay{
+  background-color: rgba(0,0,0,0.8);
+  width: 50%;
+  height: 60vh;
+}
+#serial{
+  text-align: center;
+  color: white;
+}
+#nav{
+  background-color:darkgreen;
+}
+#happy{
+  position: relative;
+
+  background-image: url(../img/bg2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.tops{
+  border: 1px solid green;
+  padding: 20px;
+  border-radius: 90px;
+}
+
+@media screen and (min-width:800px) {
+  .size{
+    position: relative;
+    top: 20px;
+    left: 120px;
+  }
+
+}
+.a:hover{
+    background-color: rgba(0,128,0,0.2) !important;
+    color:white !important;
+}
+#home{
+
+  background-color: #999E6D;
+  text-align: center;
+
+  color: white;
+}
+.desc{
+  width: 50%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  margin: auto;
+}
+.card_body{
+  background-image:url('../img/over.jpg');
+  background-size:cover;
+  background-position:center;
+}
+
+.us{
+  border: 1px solid #999E6D;
+  margin: 5px;
+}
+.picpro{
+  height: 300px;
+  width: 300px;
+  float: left;
+}
+#prof{
+  font-family: fantasy;
+  font-weight: 500;
+  color: white;
+
+}
+.one2{
+  color:white;
+
+}
+#change{
+  display: none;
+}
+.pro{
+  float: right;
+  display: none
+}
+.yespro:hover{
+
+
+}
+.on{
+  color: white;
+}
+.title{
+  background-color:#999E6D !important;
+}
