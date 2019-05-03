@@ -1,7 +1,7 @@
 from flask_mail import Message
 from flask import render_template
 from . import mail
-from manage import app
+
 import os
 
 def send_email(subject, sender, recepients, text_body, html_body):
@@ -13,3 +13,6 @@ def send_email(subject, sender, recepients, text_body, html_body):
 def send_reset_email(user):
     token = user.get_reset_password_token()
     send_email('Reset Password',sender="angeldilorna@gmail.com",recepients=[user.email],text_body=render_template('auth/reset_password.txt',user=user, token=token),html_body=render_template('auth/reset_password.html',user=user, token=token))
+
+
+    #.strftime("%m/%d/%Y, %H:%M:%S")

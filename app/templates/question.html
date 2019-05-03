@@ -24,27 +24,39 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <h4>MOringa Overflow</h4>
+        <h4>Moringa Overflow {{categ}}</h4>
       </div>
+
       <div  class="card-body card_body">
-        <p>Say and you shall get</p>
-        <code>all quiz appear here guys </code>
-        <a href=""><button  class="btn btn-outline-success" type="button" name="button">Answer</button></a>
+        <p class="text-center answer">"What do we say to the god of errors?"<br><br>"Not Today!"</p>
 
       </div>
         </div>
 
 
       <!-- query database for quiz-->
+      <div class="scroll">
       {%for feed in all_feeds%}
       <div class="card-body us">
+          <span>aksked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted}}</i>
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
+<<<<<<< HEAD
 
           <a href="{{url_for('main.answer_a_question',id=feed.id)}}">See anwers</a>
           
+=======
+        
+
+          <a href="{{url_for('main.answer_a_question',id=feed.id)}}">view anwers</a>
+          <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{feed.category}}</span>
+          <span style="margin-left:10px;">Answers</span><span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{question_count}}</span>
+
+
+>>>>>>> origin/master
       </div>
       {%endfor%}
+      </div>
 
 
 
@@ -52,11 +64,13 @@
   </div>
   <div class="col-md-4">
     <h1 style='text-align:center'>Top questions</h1>
+    {%for lan in all_feeds%}
     <div class="form-group">
-      <ul class="list-group">
-        <li class="list-group-item"><a href="#">question 1</a></li>
-      </ul>
+
+      <a href="{{url_for('main.answer_a_question',id=lan.id)}}">{{lan.title}}</a>
+
     </div>
+      {%endfor%}
   </div>
   </div>
 </div>

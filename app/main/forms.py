@@ -14,7 +14,7 @@ class PostQuestion(FlaskForm):
 
 class AnswersForm(FlaskForm):
     solution = TextAreaField('Answer the Question')
-    submit = SubmitField('Submit Answer')
+    solution_submit = SubmitField('Submit Answer')
 
 class QuestionForm(FlaskForm):
     title = StringField('Question title',validators=[Required()])
@@ -22,3 +22,6 @@ class QuestionForm(FlaskForm):
     question = TextAreaField('Post your question')
     submit = SubmitField('Submit')
 
+class Vote(FlaskForm):
+    comment=StringField("Comment")
+    submited=SubmitField("Upvote")

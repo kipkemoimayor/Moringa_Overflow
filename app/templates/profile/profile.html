@@ -32,21 +32,25 @@
 
 
       {% if user.profile_pic_path %}
-      <div id="yespro" style="background-image:url({{url_for('static',filename=user.profile_pic_path)}})" class="card-body">
+      <div id="yespro" style="background-image:url({{url_for('static',filename=user.profile_pic_path)}});background-repeat:no-repeat;background-size:cover;background-position:center" class="card-body">
         {%else%}
         <div id="yespro" style="" class="card-body">
           {%endif%}
         <div class="picpro">
           <div class="avatar mx-auto white">
             {% if user.profile_pic_path %}
-            <img  src="{{url_for('static',filename=user.profile_pic_path)}}" alt="profile avatar" class="img-fluid rounded-circle">
+            <img  src="{{url_for('static',filename=user.profile_pic_path)}}" style="background-repeat:no-repeat" alt="profile avatar" class="img-fluid rounded-circle">
             {%else%}
             <img src="/static/photos/Avatar.png" alt="profile avatar" class="img-responsive rounded-circle">
             {% endif %}
           </div>
           <h1 id="prof">{{user.username}}</h1>
-          <p class="one2">Account:User</p>
           <p class="one2">status:Active</p>
+          {%if overal_quiz%}
+          <p class="one2">Questions Posted :<span  style="margin-left:8px;font-size:15px"class="badge badge-pill badge-primary">{{overal_quiz}}</span></p>
+          {%else%}
+          <p class="one2">Questions Posted :No questions asked</p>
+          {%endif%}
         </div>
         <div class="pro  animated fadeIn">
           <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
@@ -93,7 +97,8 @@
             <div class="on">
               <div  class="jumbotron title">
                 <h5>{{quzi.title}}</h5>
-                <i class="vom">Cetegory {{quzi.category}}</i>
+
+                  <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{quzi.category}}</span>
                 <a  href="{{url_for('main.answer_a_question',id=quzi.id)}}">See answers</a>
               </div>
 

@@ -31,6 +31,8 @@ class Users(UserMixin,db.Model):
     # comments = db.relationship('Comments', backref='author', lazy='dynamic')
 
 
+
+
     @property
     def password(self):
         raise AttributeError("You cannot read the password attribute")
@@ -53,7 +55,7 @@ class Users(UserMixin,db.Model):
     @staticmethod
     def verify_reset_password(token):
         try:
-            id = jwt.decode(token, os.environ.get('SECRET_KEY'),algorithms=['HS256'])['reset_password']
+            id = jwt.decode(token,"collo",algorithms=['HS256'])['reset_password']
         except:
             return
         return Users.query.get(id)
@@ -96,6 +98,7 @@ class Question(db.Model):
     category=db.Column(db.String())
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     answers=db.relationship('Answers',backref='quiz',lazy='dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
 
@@ -105,11 +108,13 @@ model for solutions
 
 class Answers(db.Model):
     __tablename__='answers'
-    id=id=db.Column(db.Integer,primary_key=True)
+    id=db.Column(db.Integer,primary_key=True)
     solution=db.Column(db.String())
     question_id=db.Column(db.Integer,db.ForeignKey('questions.id'))
     user_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     comments=db.relationship('Comments',backref='commen',lazy='dynamic')
+    comments=db.relationship('Votes',backref='vote',lazy='dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
 class Comments(db.Model):
@@ -129,5 +134,20 @@ class Comments(db.Model):
         comments = Comments.query.filter_by(moringa_overflow_id=id).all()
         return comments
 
-    def __repr__(self):
-        return f"Comments('{self.comment}', '{self.date_posted}')"
+class Votes(db.Model):
+    __tablename__='votes'
+    comment=db.Column(db.String())
+    id=db.Column(db.Integer,primary_key=True)
+    votes_userid=db.Column(db.Integer)
+    ans_id=db.Column(db.Integer,db.ForeignKey('answers.id'))
+
+
+'''
+models for comments
+'''
+
+class Comments(db.Model):
+    __tablename__='comments'
+    id=id=db.Column(db.Integer,primary_key=True)
+    comment=db.Column(db.String())
+    answer_id=db.Column(db.Integer,db.ForeignKey('answers.id'))
