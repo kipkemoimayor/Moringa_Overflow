@@ -25,8 +25,7 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        roles=2
-        user = Users(email = form.email.data, username = form.username.data,password = form.password.data,role_id=2)
+        user = Users(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
 
@@ -71,9 +70,3 @@ def new_password(token):
         flash('Your password has been reset')
         return redirect(url_for('auth.login'))
     return render_template('auth/change_password.html',title='Reset Password',form=form)
-
-@auth.route("/logout")
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for("main.index"))
