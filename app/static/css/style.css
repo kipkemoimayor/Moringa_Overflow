@@ -155,7 +155,6 @@
 }
 #email{
   padding: 6px !important;
-  border-radius: 15px;
 
 }
 
@@ -164,9 +163,11 @@
 
 }
 #submit_reset{
-  background-color: #259BDA;
-  border-radius: 15px;
+  border-radius: 1px solid white !important;;
+  padding: 10px !important;
+  
 }
 #submit_reset:hover{
-  background-color: #E82E2E;
+  box-shadow: 0 1px 15px black  !important;
+  transition: 300ms;
 }

@@ -117,3 +117,7 @@ body{
   max-width: 50px;
   height:auto;
 }
+.resetp{
+  background-color:#999E6D !important;
+  color: white;
+}
