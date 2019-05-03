@@ -42,6 +42,8 @@
 
                 {{ wtf.quick_form(comment_form) }}
                 {{simplemde.load}}
+                {% else %}
+                <button> Log in to answer </button>
                 {%endif%}
 
                 <br>
