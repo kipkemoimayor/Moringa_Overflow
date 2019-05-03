@@ -39,7 +39,7 @@
       {%if categ=='flask'%}
       {%for cat in flask%}
       <div class="card-body us">
-        <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+        <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -50,7 +50,7 @@
       {%elif categ=='Python'%}
       {%for cat in python%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -60,7 +60,7 @@
       {%elif categ=='Django'%}
       {%for cat in django%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -70,7 +70,7 @@
       {%elif categ=='Javascript'%}
       {%for cat in javascript%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -80,7 +80,7 @@
       {%elif categ=='Postgresql'%}
       {%for cat in postgresql%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -94,14 +94,14 @@
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
-          <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{cat.category}}</span>
+          <span  style="margin-left:10px;"class="badge badge-pill badge-primary">{{cat.category.strftime("%m/%d/%Y")}}</span>
       </div>
       {%endfor%}
 
       {%elif categ=='Html5'%}
       {%for cat in html5%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -111,7 +111,7 @@
       {%elif categ=='Angular'%}
       {%for cat in angular%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>
@@ -121,7 +121,7 @@
       {%elif categ=='Java'%}
       {%for cat in java%}
       <div class="card-body us">
-          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted}}</i>
+          <span>aksked by~~</span><i>{{cat.user.username}}</i> <i>on {{cat.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{cat.title}}</h3>
           <p>{{cat.question | truncate(200)}}</p>
           <a href="{{url_for('main.answer_a_question',id=cat.id)}}">See anwers</a>

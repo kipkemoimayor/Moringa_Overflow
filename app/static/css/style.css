@@ -1,7 +1,7 @@
 .image{
   position: relative;
 
-  background-image: url(../img/bg.jpg);
+  background-image: url(../img/bg-min.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
 #happy{
   position: relative;
 
-  background-image: url(../img/bg2.jpg);
+  background-image: url(../img/bg2-min.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,7 +165,7 @@
 #submit_reset{
   border-radius: 1px solid white !important;;
   padding: 10px !important;
-  
+
 }
 #submit_reset:hover{
   box-shadow: 0 1px 15px black  !important;

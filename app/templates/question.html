@@ -38,7 +38,7 @@
       <div class="scroll">
       {%for feed in all_feeds%}
       <div class="card-body us">
-          <span>asked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted}}</i>
+          <span>asked by~~</span><i>{{feed.user.username}}</i> <i>on {{feed.posted.strftime("%m/%d/%Y")}}</i>
           <h3>{{feed.title}}</h3>
           <p>{{feed.question | truncate(200)}}</p>
 
