@@ -70,14 +70,4 @@ def new_password(token):
         db.session.commit()
         flash('Your password has been reset')
         return redirect(url_for('auth.login'))
-<<<<<<< HEAD
-    return render_template('auth/change_password.html',title='Reset Password',form=form,token=token)
-
-@auth.route("/logout")
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for("main.index"))
-=======
     return render_template('auth/change_password.html',title='Reset Password',form=form)
->>>>>>> origin/master
