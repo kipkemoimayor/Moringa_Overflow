@@ -9,16 +9,28 @@
           </div>
         <div class="row">
             <div class="col-md-7">
-              <h5>{{question.question | capitalize}}</h5>
+              <i style="color:#898;" class='' >Asked  by ~~ {{question.user.username}} on {{question.posted}} </i>
+              <div class="quiz-body">
+                <h5>  {{format_question|safe}}</h5>
+              </div>
+
+
               <hr class="bg-success">
 
               <div class="answers">
+                  {%if answer%}
                 {%for ans in answer%}
+
                 <div class="card-body">
                   <p style="background-color:rgba(0,0,0,0.05)" class="card-footer">{{ans.solution|capitalize}}</p>
                   <div class="card-text text-muted">Posted by:{{ans.owner.username}}</div>
                 </div>
+
                 {%endfor%}
+                  {%else%}
+                  <p class="alert alert-warning">This question has no answers yet</p>
+
+                  {%endif%}
 
               </div>
             </div>
@@ -26,9 +38,11 @@
 
 
             <div class="col-md-5">
+              {%if current_user.is_authenticated%}
 
                 {{ wtf.quick_form(comment_form) }}
                 {{simplemde.load}}
+                {%endif%}
 
                 <br>
             </div>

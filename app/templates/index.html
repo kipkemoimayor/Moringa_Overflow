@@ -8,9 +8,9 @@
         <div id="serial" class="col-md-6">
           <div class="size">
 
-              <a href="#"><p class="options">Post an Error</p></a>
-              <a href="#"><p class="options">Ask a TM</p></a>
-              <a id="scro" href="#languages"><p class="options">View Languages</p></a>
+              <a href="{{url_for('main.ask_a_question')}}"><p class="options">Post an Error</p></a>
+              <a title="Feature comming soon" href="#"><p class="options">Ask a TM</p></a>
+              <a id="scro" href="{{url_for('main.ask_a_question')}}"><p class="options">View Languages</p></a>
              <a class="tops a btn btn-outline-success" href="{{url_for('main.ask_a_question')}}">Ask <i class="fas fa-search"></i></a>
 
           </div>
@@ -67,7 +67,7 @@
     </p>
     <i>Remember even the best of the best once learned and asked Questions </i>
 
-    <button class="btn btn-outline-success" type="button" name="button">View Question</button>
+    <a href="{{url_for('main.feeds')}}"><button class="btn btn-outline-success" type="button" name="button">View Questions</button></a>
 
 
   </div>
@@ -81,18 +81,18 @@
 <div class="row">
   <div class="col-md-12">
     <h1 class="text-center head">Pick A Place To Start</h1>
-    <h3 class="text-center heady">from classes offered at Moringa</h3><br><br>
+    <h3 class="text-center heady">A community Of developers</h3><br><br>
     <div  class=" container languages">
 
-    <a href="#"><i class="fab fa-angular fa-5x"></i><br><p class="">Angular</p></a>
-    <a href="#"><i class="fab fa-java fa-5x"></i><br><p class="">Java</p></a>
-    <a href="#"><i class="fab fa-js fa-5x"></i><br><p class="">Javascript</p></a>
-    <a href="#"><i class="fab fa-python fa-5x"></i><br><p class="">Python</p></a>
-    <a href="#"><i class="fas fa-pepper-hot fa-5x fa-flip-horizontal"></i><br><p class="">Flask</p></a>
+    <a href="{{url_for('main.categories',categ='Angular')}}"><i class="fab fa-angular fa-5x"></i><br><p class="">Angular</p></a>
+    <a href="{{url_for('main.categories',categ='Java')}}"><i class="fab fa-java fa-5x"></i><br><p class="">Java</p></a>
+    <a href="{{url_for('main.categories',categ='Javascript')}}"><i class="fab fa-js fa-5x"></i><br><p class="">Javascript</p></a>
+    <a href="{{url_for('main.categories',categ='Python')}}"><i class="fab fa-python fa-5x"></i><br><p class="">Python</p></a>
+    <a href="{{url_for('main.categories',categ='flask')}}"><i class="fas fa-pepper-hot fa-5x fa-flip-horizontal"></i><br><p class="">Flask</p></a>
     <!-- <img src="http://flask.pocoo.org/docs/0.12/_static/flask.png" alt=""><br><p class="">Flask</p> -->
-    <a href="#"><i class="fab fa-css3-alt fa-5x"></i><br><p class="">HTML/CSS</p></a>
-    <a href="#"><i class="far fa-star fa-5x"></i><br><p class="">Spark</p></a>
-    <a id="language" href="#"><i class="fas fa-database fa-5x"></i><br><p class="">SQL</p></a>
+    <a href="{{url_for('main.categories',categ='Html5')}}"><i class="fab fa-css3-alt fa-5x"></i><br><p class="">HTML/CSS</p></a>
+    <a href="{{url_for('main.categories',categ='Django')}}"><i class="far fa-star fa-5x"></i><br><p class="">Spark</p></a>
+    <a id="language" href="{{url_for('main.categories',categ='Postgresql')}}"><i class="fas fa-database fa-5x"></i><br><p class="">SQL</p></a>
     </div><br><br>
 
   </div>
