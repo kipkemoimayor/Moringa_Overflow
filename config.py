@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://john:pass@localhost/final'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://john:pass@localhost/john1'
 
     SECRET_KEY="john"
 
@@ -20,7 +20,7 @@ class Config:
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://john:pass@localhost/john1'
 
     DEBUG= True
 

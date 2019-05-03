@@ -74,12 +74,7 @@ def feeds():
 
     all_feeds=Question.query.all()
     all_feeds.reverse()
-
-<<<<<<< HEAD
-    count_feed=Answers.query.filter_by(question_id=1).all()
-=======
     count_feed=Answers.query.all()
->>>>>>> origin/master
     arr=[]
     for i in count_feed:
         arr.append(1)
@@ -87,17 +82,8 @@ def feeds():
     question_count=sum(arr)
 
 
-<<<<<<< HEAD
-
-
-
-    title="Feeds"
-=======
-
-
     title="Feeds"
 
->>>>>>> origin/master
     return render_template("question.html",title=title,all_feeds=all_feeds,question_count=question_count)
 
 
