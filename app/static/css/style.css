@@ -148,3 +148,8 @@
   width: 300px;
 
 }
+@media screen and (max-width:360px) {
+  .languages{
+    overflow-x: auto;
+  }
+}
