@@ -59,10 +59,10 @@ def answer_a_question(id):
 
 
     format_question=markdown2.markdown(question.question,extras=['code-friendly','fenced-code-blocks'])
-    format_answer=markdown2.markdown(answere.solution,extras=['code-friendly','fenced-code-blocks'])
 
 
-    return render_template("answers.html",format_answer=format_answer,comment_form=answer_form,question=question,answer=answer,format_question=format_question)
+
+    return render_template("answers.html",comment_form=answer_form,question=question,answer=answer,format_question=format_question)
 
 
 

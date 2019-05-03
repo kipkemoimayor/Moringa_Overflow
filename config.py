@@ -5,6 +5,8 @@ class Config:
 
     SECRET_KEY="john"
 
+    SECRET_KEY="qwerty"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     # simple mde  configurations
@@ -18,9 +20,12 @@ class Config:
 
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
+
     DEBUG= True
 
 class ProdConfig(Config):
+
     SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL")
 
 class Config:

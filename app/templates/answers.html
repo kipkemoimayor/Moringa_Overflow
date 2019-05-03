@@ -9,7 +9,7 @@ mwas{% extends 'base.html'%}
           </div>
         <div class="row">
             <div class="col-md-7">
-              <i style="color:#898;" class='' >Asked  by ~~ {{question.user.username}} on {{question.posted}} </i>
+              <i style="color:#898;" class='' >Asked  by ~~ {{question.user.username}} on {{question.posted.strftime("%m/%d/%Y")}} </i>
               <div class="quiz-body">
                 <h5>  {{format_question|safe}}</h5>
               </div>

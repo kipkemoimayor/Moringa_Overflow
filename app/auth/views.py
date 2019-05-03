@@ -14,7 +14,7 @@ def login():
         user = Users.query.filter_by(email = login_form.email.data).first()
         if user is not None and user.verify_password(login_form.password.data):
             login_user(user,login_form.remember.data)
-            return redirect(request.args.get("next") or url_for("main.index"))
+            return redirect(request.args.get('next') or url_for('main.index'))
 
         flash('Invalid username or Password')
 
@@ -35,11 +35,11 @@ def register():
     title = "New Account"
     return render_template('auth/register.html',registration_form = form, title = title)
 
-# @auth.route('/logout')
-# @login_required
-# def logout():
-#     logout_user()
-#     return redirect(url_for("main.index"))
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("main.index"))
 
 @auth.route('/reset',methods=['GET','POST'])
 def reset_password():
@@ -70,6 +70,7 @@ def new_password(token):
         db.session.commit()
         flash('Your password has been reset')
         return redirect(url_for('auth.login'))
+<<<<<<< HEAD
     return render_template('auth/change_password.html',title='Reset Password',form=form,token=token)
 
 @auth.route("/logout")
@@ -77,3 +78,6 @@ def new_password(token):
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+=======
+    return render_template('auth/change_password.html',title='Reset Password',form=form)
+>>>>>>> origin/master
