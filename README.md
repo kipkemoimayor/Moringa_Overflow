@@ -30,5 +30,5 @@ NO known bugs as at the moment please reach to us if you see any.
 * PostgreSQL Database
 
 ### License
-*License is under MIT 2019*
-Copyright (c) 2019 **Moringa Community**
+*License is under Proprietary software 2019*
+Copyright (c) 2019 all rights reserved **Moringa Community**
