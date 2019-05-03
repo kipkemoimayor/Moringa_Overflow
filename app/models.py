@@ -27,8 +27,6 @@ class Users(UserMixin,db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     questions=db.relationship('Question',backref='user',lazy='dynamic')
     answers=db.relationship('Answers',backref='owner',lazy='dynamic')
-    # moringa_overflow = db.relationship('moringa_overflow', backref='author', lazy='dynamic')
-    # comments = db.relationship('Comments', backref='author', lazy='dynamic')
 
 
 
@@ -116,14 +114,7 @@ class Answers(db.Model):
     posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
-    def save_comment(self):
-        db.session.add(self)
-        db.session.commit()
 
-    @classmethod
-    def get_comment(cls,id):
-        comments = Comments.query.filter_by(moringa_overflow_id=id).all()
-        return comments
 
 class Votes(db.Model):
     __tablename__='votes'

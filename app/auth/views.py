@@ -58,7 +58,6 @@ def reset_password():
 
 @auth.route('/new_password/<token>', methods=['GET','POST'])
 def new_password(token):
-    token=token
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
     user = Users.verify_reset_password(token)
