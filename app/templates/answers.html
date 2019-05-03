@@ -36,14 +36,13 @@
             </div>
 
 
-
             <div class="col-md-5">
               {%if current_user.is_authenticated%}
 
                 {{ wtf.quick_form(comment_form) }}
                 {{simplemde.load}}
                 {% else %}
-                <a class="btn btn-outline-success"  href="{{url_for('auth.login')}}" > Log in to answer </a>
+                <a class="btn btn-outline-success"  href="{{url_for('auth.login')}}"> Log in to answer </a>
                 {%endif%}
 
                 <br>
