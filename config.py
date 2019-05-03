@@ -3,7 +3,7 @@ import os
 class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS=False
-    SECRET_KEY="lizzy"
+    SECRET_KEY="collo"
 
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
@@ -18,7 +18,7 @@ class Config:
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://elizabeth:123@localhost/moringa_overflow'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
 
     DEBUG= True
 
