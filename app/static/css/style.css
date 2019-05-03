@@ -153,3 +153,20 @@
     overflow-x: auto;
   }
 }
+#email{
+  padding: 6px !important;
+  border-radius: 15px;
+
+}
+
+.reset{
+  margin-top: 30px;
+
+}
+#submit_reset{
+  background-color: #259BDA;
+  border-radius: 15px;
+}
+#submit_reset:hover{
+  background-color: #E82E2E;
+}

@@ -5,6 +5,8 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS=False
     SECRET_KEY="collo"
 
+    SECRET_KEY="qwerty"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     # simple mde  configurations
