@@ -1,7 +1,6 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
     SQLALCHEMY_TRACK_MODIFICATIONS=False
     SECRET_KEY="collo"
 
@@ -20,10 +19,13 @@ class Config:
 
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://collo:collins@localhost/moringa_overflow'
+
     DEBUG= True
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL")
+    pass
+    # SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL")
 
 
 config_options={
