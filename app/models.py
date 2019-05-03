@@ -116,14 +116,6 @@ class Answers(db.Model):
     posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
-class Comments(db.Model):
-    __tablename__ = 'comments'
-    id = db.Column(db.Integer, primary_key=True)
-    comment = db.Column(db.String(255))
-    date_posted = db.Column(db.DateTime(250), default=datetime.utcnow)
-    moringa_overflow_id = db.Column(db.Integer, db.ForeignKey("moringa_overflow.id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
